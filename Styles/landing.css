@@ -32,7 +32,6 @@
     margin-right: 100px;
     line-height: 35px;
     padding-bottom: 10px;
-
 }
 
 .test2 {
@@ -50,15 +49,7 @@ body{
     background: #ffb3c6;
 }
 
-.header {
-    font-family:'Monster', 'serif';
-    font-size: 60px;
-    color: palegoldenrod;
-    background: #fb6f92;
-    padding: 30px;
-    margin: -8px;
-    text-align: center;
-}
+
 
 .blinker {
     font-family:'Minecraft', 'serif';
@@ -70,5 +61,49 @@ body{
     line-height: 35px;
     padding-bottom: 10px;
     text-align: center;
-    
 }
+
+.test3 {
+    font-family:'Monster', 'serif';
+    font-size: 14px;
+    color: black;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: -60px;
+}
+
+.test4 {
+    font-family:'Monster', 'serif';
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    padding-left:10;
+}
+
+.button-54 {
+    font-family: "Monster", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: -55;
+ }
+  
+  .button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
