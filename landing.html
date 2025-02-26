@@ -1,0 +1,51 @@
+<html>
+    <title>\\work in progress build\\</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/landing.css">
+        <style>
+            @keyframes blink {
+                0% { opacity: 1; }
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            
+            .blinking {
+                animation: blink 1.5s infinite;
+            }
+        </style>
+        <script>
+            // Wait for the DOM to be fully loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get the blinker div
+                const blinkerDiv = document.querySelector(".blinker");
+                
+                // Add the blinking class
+                blinkerDiv.classList.add("blinking");
+                
+                // Set a timeout to change the text after 5 seconds
+                setTimeout(function() {
+                    // Change the text
+                    blinkerDiv.textContent = ">>> click anywhere to continue <<<";
+                    
+                    // Optional: Stop the blinking effect
+                    blinkerDiv.classList.remove("blinking");
+                    
+                    // Add click event listener to the document
+                    document.addEventListener("click", function() {
+                        // Handle the click event here
+                        console.log("User clicked to continue");
+                        // You can add more functionality here
+                    });
+                }, 7000); // 5000 milliseconds = 5 seconds
+            });
+        </script>
+     </head>
+     <body>
+        <p class="header">/UNTITLED/</p>
+        <div class="trans">
+        <p class="test2">Read Me!</p>
+        <p class="test1">Hey there. This game has been in the making for a while and god it was HARD. The amount of bugs and everything ugh it was never ending. But alls well now (hopefully). I mean i dont even know if ill even be able to finish this to the original scope that i had planned for it but i gues we'll see. I still havent come up with a name for this and i dont know if ill even be able to lmao. uh, i dont know if you've read what ive written but here it is just in case you havent or you wanna see it again https://codepen.io/urmeankanha/full/pvobvLq. I put in an insane amount of work in this and i hope the quality shows for itself. Theres also a few tracks that, not made specefically for this, did suit the game well. so theres that. i dont wanna spoil much of the game, but im sure you'll like it. kinda wanted to replicate the DTI wala feel, but i guess it just turned out to be its own thing. It has a lotta options, a lot of customisations and ill probably add more to it as time goes on, but this is a good first release. The music can be stopped, skipped, paused and allat. Theres even an option to save the outfits that you made. Unless there isnt and i forgot to make it. in that case forget what i said. IF youre still reading this, thanks for downloading the game first of all, and secondly go crazy. Theres a ton (not exactly) of stuff to do and it should your monkey brain entertained for a good afternoon. All that being said, i hope you enjoy playing this as much as i enjoyed making this for you. Love you <3 </p>
+        </div>
+        <div class="blinker"> >>> please wait loading <<< </div>
+     </body>
+</html>

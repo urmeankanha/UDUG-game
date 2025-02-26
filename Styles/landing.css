@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.woff2') format('woff2'),
+        url('fonts/Minecraft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monster';
+    src: url('fonts/MonsterFriendFore.woff2') format('woff2'),
+        url('fonts/MonsterFriendFore.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.trans {
+    background: rgba(0, 0, 0, 40%);
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px,6px 6px 0px 0px,7px 7px 0px 0px, 8px 8px 0px 0px, 9px 9px 0px 0px,10px 10px 0px 0px;
+}
+
+.test1 {
+    font-family:'Minecraft', 'serif';
+    font-size: 20px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 35px;
+    padding-bottom: 10px;
+
+}
+
+.test2 {
+    font-family:'Monster', 'serif';
+    font-size: 40px;
+    color: #B19CD9;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 15px;
+}
+
+body{
+    background: #ffb3c6;
+}
+
+.header {
+    font-family:'Monster', 'serif';
+    font-size: 60px;
+    color: palegoldenrod;
+    background: #fb6f92;
+    padding: 30px;
+    margin: -8px;
+    text-align: center;
+}
+
+.blinker {
+    font-family:'Minecraft', 'serif';
+    font-size: 25px;
+    color: rgb(45, 45, 45);
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-right: 100px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    text-align: center;
+    
+}
