@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>>>work in progress build<<</title>
     <link rel="stylesheet" type="text/css" href="styles/landing.css">
+    <audio id="background-audio" preload="auto">
+        <source src="Audio/love.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+<!-- Now Playing Display with Skip Button -->
+<div class="now-playing-container"> 
+    <button id="skip-button" class="skip-btn">⏭ Skip</button>
+</div>
+
+<!-- Background Audio -->
+<audio id="background-audio" loop preload="auto">
+    <source src="Audio/love.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
     <style>
         @font-face {
             font-family: 'Monster';
@@ -22,7 +37,39 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            overflow: hidden; /* Prevents any scrollbars */
+            overflow: hidden;
+            transition: filter 0.3s ease; /* Smooth transition effect */
+        }
+
+        /* Dim Background Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+            backdrop-filter: blur(5px); /* Slight blur effect */
+            z-index: 999;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Fullscreen Popup */
+        .fullscreen-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fb6f92;
+            color: palegoldenrod;
+            font-family: 'Monster', sans-serif;
+            font-size: 24px;
+            padding: 20px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
         }
 
         /* Header Styling */
@@ -91,11 +138,11 @@
             display: flex;
             flex: 1;
             height: 100vh;
-            overflow: hidden; /* Ensures no scrollbar */
+            overflow: hidden;
         }
 
         .left-frame {
-            width: 50%; /* Ensures equal split */
+            width: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -103,27 +150,25 @@
             font-family: 'Monster', sans-serif;
             font-size: 24px;
             color: white;
-            background: #ffc2d1; /* Lighter Pink */
+            background: #ffc2d1;
             height: 100vh;
-            overflow: hidden; /* Ensures no scrollbar */
+            overflow: hidden;
             word-wrap: break-word;
         }
 
         .right-frame {
-            width: 50%; /* Ensures perfect alignment */
-            overflow-y: auto; /* Enables scrolling */
+            width: 50%;
+            overflow-y: auto;
             height: 100vh;
-            background: #ff8fab; /* Darker Pink */
+            background: #ff8fab;
             margin: 0;
             padding: 0;
-
-            /* Hides scrollbar */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE & Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .right-frame::-webkit-scrollbar {
-            width: 0px; /* Hides scrollbar in Chrome & Safari */
+            width: 0px;
         }
 
         .section {
@@ -156,10 +201,53 @@
         .section:nth-child(16) { background: #48cae4; }
         .section:nth-child(17) { background: #90e0ef; }
         .section:nth-child(18) { background: #ade8f4; }
+        .now-playing-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.test3 {
+    font-family: 'Monster', sans-serif;
+    font-size: 18px;
+    color: palegoldenrod;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.skip-btn {
+    font-family: 'Monster', sans-serif;
+    font-size: 16px;
+    background: #fb6f92;
+    color: palegoldenrod;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 350px;
+}
+
+.skip-btn:hover {
+    background: #ff8fab;
+}
+
 
     </style>
 </head>
 <body>
+
+    <!-- Dim Background Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Fullscreen Popup -->
+    <div id="fullscreenPopup" class="fullscreen-popup" onclick="enterFullscreen()">
+        Click to go back to full screen
+    </div>
 
     <section class="header">
         <div class="header-container">
@@ -168,7 +256,8 @@
                 <div class="scrolling-text">//// //// //// //// ////</div>
             </div>
         </div>
-        <p class="test3">🎵 Now Playing: sleep deprived guy - memories</p>
+        <p id="now-playing" class="test3">🎵 Now Playing: None</p>
+
     </section>
 
     <div class="main-container">
@@ -192,8 +281,82 @@
             <div class="section">Section 16</div>
             <div class="section">Section 17</div>
             <div class="section">Section 18</div>
+            
         </div>
     </div>
+
+    <script>
+        document.addEventListener("click", startFullscreenAndAudio);
+document.getElementById("skip-button").addEventListener("click", skipSong);
+
+const songs = ["Audio/love.mp3", "Audio/next-song.mp3", "Audio/song3.mp3"]; // Add more songs here
+let currentSongIndex = 0;
+
+function startFullscreenAndAudio() {
+    const audio = document.getElementById("background-audio");
+
+    // Request fullscreen
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log("Fullscreen error:", err);
+        });
+    }
+
+    // Play the first audio
+    audio.src = songs[currentSongIndex];
+    audio.play().catch(error => console.log("Autoplay blocked:", error));
+
+    // Update "Now Playing" text when the audio starts
+    updateNowPlaying(audio.src);
+
+    // Ensure "Now Playing" updates every time the audio plays
+    audio.addEventListener("play", function () {
+        updateNowPlaying(audio.src);
+    });
+
+    // When the audio ends, switch to the next song
+    audio.addEventListener("ended", skipSong);
+
+    // Remove event listener after first click
+    document.removeEventListener("click", startFullscreenAndAudio);
+
+    // Hide popup and overlay if they exist
+    const popup = document.getElementById("fullscreenPopup");
+    const overlay = document.getElementById("overlay");
+    if (popup) popup.style.display = "none";
+    if (overlay) overlay.style.display = "none";
+}
+
+function skipSong() {
+    const audio = document.getElementById("background-audio");
+
+    // Move to the next song in the array
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    audio.src = songs[currentSongIndex];
+
+    // Play the next song
+    audio.play().catch(error => console.log("Error playing next song:", error));
+
+    // Update "Now Playing" text
+    updateNowPlaying(audio.src);
+}
+
+function updateNowPlaying(audioSrc) {
+    const nowPlayingText = document.getElementById("now-playing");
+
+    if (!audioSrc) {
+        nowPlayingText.innerHTML = "🎵 Now Playing: None";
+        return;
+    }
+
+    // Extract filename from path (remove directories & file extension)
+    const filename = audioSrc.split('/').pop().split('.').shift().replace(/_/g, ' ');
+
+    // Update the now-playing element
+    nowPlayingText.innerHTML = `🎵 Now Playing: ${filename}`;
+}
+
+    </script>
 
 </body>
 </html>
