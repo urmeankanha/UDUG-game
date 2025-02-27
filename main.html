@@ -22,6 +22,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            overflow: hidden; /* Prevents any scrollbars */
         }
 
         /* Header Styling */
@@ -89,26 +90,73 @@
         .main-container {
             display: flex;
             flex: 1;
-            height: 100%;
+            height: 100vh;
+            overflow: hidden; /* Ensures no scrollbar */
         }
 
-        .left-frame, .right-frame {
-            flex: 1;
+        .left-frame {
+            width: 50%; /* Ensures equal split */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Monster', sans-serif;
+            font-size: 24px;
+            color: white;
+            background: #ffc2d1; /* Lighter Pink */
+            height: 100vh;
+            overflow: hidden; /* Ensures no scrollbar */
+            word-wrap: break-word;
+        }
+
+        .right-frame {
+            width: 50%; /* Ensures perfect alignment */
+            overflow-y: auto; /* Enables scrolling */
+            height: 100vh;
+            background: #ff8fab; /* Darker Pink */
+            margin: 0;
+            padding: 0;
+
+            /* Hides scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE & Edge */
+        }
+
+        .right-frame::-webkit-scrollbar {
+            width: 0px; /* Hides scrollbar in Chrome & Safari */
+        }
+
+        .section {
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Monster', sans-serif;
             font-size: 24px;
             color: white;
+            text-align: center;
         }
 
-        .left-frame {
-            background: #ffc2d1; /* Lighter Pink */
-        }
+        /* Different colors for each section */
+        .section:nth-child(1) { background: #ffadad; }
+        .section:nth-child(2) { background: #ffd6a5; }
+        .section:nth-child(3) { background: #fdffb6; }
+        .section:nth-child(4) { background: #caffbf; }
+        .section:nth-child(5) { background: #9bf6ff; }
+        .section:nth-child(6) { background: #a0c4ff; }
+        .section:nth-child(7) { background: #bdb2ff; }
+        .section:nth-child(8) { background: #ffc6ff; }
+        .section:nth-child(9) { background: #ff8fab; }
+        .section:nth-child(10) { background: #ffb3c6; }
+        .section:nth-child(11) { background: #d0bfff; }
+        .section:nth-child(12) { background: #f3c4fb; }
+        .section:nth-child(13) { background: #ffcf81; }
+        .section:nth-child(14) { background: #ff6b6b; }
+        .section:nth-child(15) { background: #00b4d8; }
+        .section:nth-child(16) { background: #48cae4; }
+        .section:nth-child(17) { background: #90e0ef; }
+        .section:nth-child(18) { background: #ade8f4; }
 
-        .right-frame {
-            background: #ff8fab; /* Darker Pink */
-        }
     </style>
 </head>
 <body>
@@ -125,7 +173,26 @@
 
     <div class="main-container">
         <div class="left-frame">Left Frame Content</div>
-        <div class="right-frame">Right Frame Content</div>
+        <div class="right-frame">
+            <div class="section">Section 1</div>
+            <div class="section">Section 2</div>
+            <div class="section">Section 3</div>
+            <div class="section">Section 4</div>
+            <div class="section">Section 5</div>
+            <div class="section">Section 6</div>
+            <div class="section">Section 7</div>
+            <div class="section">Section 8</div>
+            <div class="section">Section 9</div>
+            <div class="section">Section 10</div>
+            <div class="section">Section 11</div>
+            <div class="section">Section 12</div>
+            <div class="section">Section 13</div>
+            <div class="section">Section 14</div>
+            <div class="section">Section 15</div>
+            <div class="section">Section 16</div>
+            <div class="section">Section 17</div>
+            <div class="section">Section 18</div>
+        </div>
     </div>
 
 </body>
