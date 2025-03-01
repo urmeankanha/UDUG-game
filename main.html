@@ -45,6 +45,37 @@
             transition: opacity 0.3s ease;
         }
 
+        .section:first-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid black; /* Adds border to main image */
+    border-radius: 10px; /* Optional: rounded edges */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    padding: 100px;
+}
+
+.grid-item {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black; /* Adds border to grid images */
+    border-radius: 10px; /* Optional: rounded edges */
+}
+
+
         /* Fullscreen Popup */
         .fullscreen-popup {
             position: fixed;
@@ -163,15 +194,64 @@
         }
 
         .section {
-            height: 200px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: left;
+            justify-content: left;
             font-family: 'Monster', sans-serif;
             font-size: 24px;
-            color: white;
+            color: black;
             text-align: center;
+            padding: 10px;
         }
+        .eyes-section {
+    display: flex;
+    gap: -100px; /* Adds spacing between the two grids */
+    flex-wrap: nowrap; /* Ensures both grids stay in a single line */
+}
+
+/* Large Grid (100px x 100px images) */
+.large-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/* Small Grid (50px x 50px images) */
+.small-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 10px;
+}
+
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* Center the 7th image in both grids */
+.special-item-lg {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.special-item-sm {
+    grid-column: 2;
+    grid-row: 3;
+}
+
 
         /* Different colors for each section */
         .section:nth-child(1) { background: #ffadad; }
@@ -192,6 +272,40 @@
         .section:nth-child(16) { background: #48cae4; }
         .section:nth-child(17) { background: #90e0ef; }
         .section:nth-child(18) { background: #ade8f4; }
+
+/* Ensure the left frame centers everything */
+.left-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for the images */
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for both layers */
+.layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers both images perfectly */
+    width: auto;
+    height: auto;
+}
+
+/* Ensures the second layer is stacked on top */
+.layer2 {
+    mix-blend-mode: normal; /* Adjust if blending is needed */
+}
+
+
 
     </style>
 </head>
@@ -217,26 +331,63 @@
     </section>
 
     <div class="main-container">
-        <div class="left-frame">Left Frame Content</div>
+        <div class="left-frame">
+            <div class="image-container">
+                <img src="Resources/in game/Body+Colors/c1.png" alt="Base Layer" class="layer layer1">
+                <img src="Resources/in game/Body+Colors/outline.png" alt="Top Layer" class="layer layer2">
+            </div>
+        </div>
+        
         <div class="right-frame">
-            <div class="section">Section 1</div>
-            <div class="section">Section 2</div>
-            <div class="section">Section 3</div>
-            <div class="section">Section 4</div>
-            <div class="section">Section 5</div>
-            <div class="section">Section 6</div>
-            <div class="section">Section 7</div>
-            <div class="section">Section 8</div>
-            <div class="section">Section 9</div>
-            <div class="section">Section 10</div>
-            <div class="section">Section 11</div>
-            <div class="section">Section 12</div>
-            <div class="section">Section 13</div>
-            <div class="section">Section 14</div>
-            <div class="section">Section 15</div>
-            <div class="section">Section 16</div>
-            <div class="section">Section 17</div>
-            <div class="section">Section 18</div>
+            <div class="section">Skins
+                <img src="Resources/ASSETS (ICONS ONLY)/Base/slim.png" alt="Main Skin Preview" class="main-image">
+                <div class="grid-container">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c1.png" alt="Skin Option 1" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c3.png" alt="Skin Option 2" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c4.png" alt="Skin Option 3" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c5.png" alt="Skin Option 4" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c6.png" alt="Skin Option 5" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Base/c7.png" alt="Skin Option 6" class="grid-item">
+                </div>
+            </div>
+            <div class="section eyes-section">Eyes
+                <div class="grid-container large-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e1.png" alt="Eyes Option 1" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e2.png"" alt="Eyes Option 2" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e3.png"" alt="Eyes Option 3" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e4.png"" alt="Eyes Option 4" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e5.png"" alt="Eyes Option 5" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e6.png"" alt="Eyes Option 6" class="grid-item-lg">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e7.png"" alt="Eyes Option 7" class="grid-item-lg special-item-lg">
+                </div>
+            
+                <div class="grid-container small-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c1.png" alt="Small Eyes Option 1" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c2.png" alt="Small Eyes Option 2" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c3.png" alt="Small Eyes Option 3" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c4.png" alt="Small Eyes Option 4" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c5.png" alt="Small Eyes Option 5" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c6.png" alt="Small Eyes Option 6" class="grid-item-sm">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c7.png" alt="Small Eyes Option 7" class="grid-item-sm special-item-sm">
+                </div>
+            </div>
+            
+            <div class="section">Mouth</div>
+            <div class="section">Brows</div>
+            <div class="section">Blush</div>
+            <div class="section">Bangs</div>
+            <div class="section">Hair</div>
+            <div class="section">Tops</div>
+            <div class="section">Skirts</div>
+            <div class="section">Dresses</div>
+            <div class="section">Jackets</div>
+            <div class="section">Socks</div>
+            <div class="section">Shoes</div>
+            <div class="section">Leg Warmers</div>
+            <div class="section">Accesories 1</div>
+            <div class="section">Accesories 2</div>
+            <div class="section">Accesories 3</div>
+            <div class="section">Extras</div>
         </div>
     </div>
     <script>
