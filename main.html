@@ -252,6 +252,871 @@
     grid-row: 3;
 }
 
+.mouth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    gap: 15px;
+}
+
+/* Style the section title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Grid for 8 mouth images */
+.mouth-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 images per row */
+    grid-template-rows: repeat(2, 100px); /* 2 rows */
+    gap: 10px;
+}
+
+/* Style for images */
+.grid-item {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.brows-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+/* Style the section title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Grid for 6 brows images */
+.brows-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 images per row */
+    grid-template-rows: repeat(2, 100px); /* 2 rows */
+    gap: 10px;
+}
+
+/* Style for images */
+.grid-item {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.blush-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Style the section title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Make both grids appear in the same row */
+.blush-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between the two grids */
+}
+
+/* Grid 1: 3 images in one row (100x100px) */
+.blush-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: 100px;
+    gap: 10px;
+}
+
+/* Grid 2: 4 images in a 2x2 layout (50x50px) */
+.blush-grid-square {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 5px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.bangs-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Align both grids in the same row */
+.bangs-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Large Grid: 25 images in a 5x5 layout (75x75px) */
+.bangs-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: repeat(5, 75px);
+    gap: 40px;
+    margin-left: 10px;
+}
+
+/* Small Grid: 7 images in a 3x3 layout (50x50px) */
+.bangs-grid-small {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 10px;
+}
+
+/* Style for large images (75x75px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* Ensure the 7th image is centered in the 3x3 grid */
+.special-item {
+    grid-column: 2; /* Puts it in the middle column */
+    grid-row: 2; /* Puts it in the middle row */
+}
+
+.hair-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Align both grids in the same row */
+.hair-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 00px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+/* Large Grid: 25 images in a 5x5 layout (100x100px) */
+.hair-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 10px;
+
+}
+
+/* Small Grid: 7 images in a 3x3 layout (50x50px) */
+.hair-grid-small {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 10px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+    gap: 10px;
+
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* Ensure the 7th image is centered in the 3x3 grid */
+.special-item {
+    grid-column: 2; /* Puts it in the middle column */
+    grid-row: 2; /* Puts it in the middle row */
+}
+
+.tops-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.tops-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.tops-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 5x2 layout (100x100px) */
+.tops-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 7x2 layout (50x50px) */
+.tops-grid-small {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.skirts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.skirts-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.skirts-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 5x2 layout (100x100px) */
+.skirts-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 7x2 layout (50x50px) */
+.skirts-grid-small {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.dresses-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.dresses-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.dresses-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 5x1 layout (100x100px) */
+.dresses-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.dresses-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.jackets-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.jackets-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.jackets-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 7x1 layout (100x100px) */
+.jackets-grid-large {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.jackets-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.socks-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.socks-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.socks-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 4x1 layout (100x100px) */
+.socks-grid-large {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.socks-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.shoes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.shoes-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.shoes-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 6x1 layout (100x100px) */
+.shoes-grid-large {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.shoes-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(1, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.legwarmers-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.legwarmers-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.legwarmers-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 5x1 layout (100x100px) */
+.legwarmers-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(1, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.legwarmers-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(1, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.accessories1-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.accessories1-grids-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 600px; /* Ensures enough space for both grids */
+    overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.accessories1-grids-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Large Grid: 11x2 layout (50x50px) */
+.accessories1-grid-large {
+    display: grid;
+    grid-template-columns: repeat(11, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.accessories1-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(1, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+/* Style for all images (50x50px) */
+.grid-item-sm {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 
         /* Different colors for each section */
         .section:nth-child(1) { background: #ffadad; }
@@ -372,22 +1237,416 @@
                 </div>
             </div>
             
-            <div class="section">Mouth</div>
-            <div class="section">Brows</div>
-            <div class="section">Blush</div>
-            <div class="section">Bangs</div>
-            <div class="section">Hair</div>
-            <div class="section">Tops</div>
-            <div class="section">Skirts</div>
-            <div class="section">Dresses</div>
-            <div class="section">Jackets</div>
-            <div class="section">Socks</div>
-            <div class="section">Shoes</div>
-            <div class="section">Leg Warmers</div>
-            <div class="section">Accesories 1</div>
-            <div class="section">Accesories 2</div>
-            <div class="section">Accesories 3</div>
-            <div class="section">Extras</div>
+            <div class="section mouth-section">Mouth
+                <div class="grid-container mouth-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/1.png" alt="Mouth Option 1" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/2.png" alt="Mouth Option 2" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/3.png" alt="Mouth Option 3" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/4.png" alt="Mouth Option 4" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/5.png" alt="Mouth Option 5" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/6.png" alt="Mouth Option 6" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/7.png" alt="Mouth Option 7" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/8.png" alt="Mouth Option 8" class="grid-item">
+                </div>
+            </div>
+            
+            <div class="section brows-section">
+                <h2 class="section-title">Brows</h2>
+            
+                <!-- Grid of 6 images -->
+                <div class="grid-container brows-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w1.png" alt="Brows Option 1" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w2.png" alt="Brows Option 2" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w3.png" alt="Brows Option 3" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w4.png" alt="Brows Option 4" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w5.png" alt="Brows Option 5" class="grid-item">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w6.png" alt="Brows Option 6" class="grid-item">
+                </div>
+            </div>
+            
+            <div class="section blush-section">
+                <h2 class="section-title">Blush</h2>
+            
+                <div class="blush-grids-container">
+                    <!-- Grid 1: 3 images in one row (100x100px) -->
+                    <div class="grid-container blush-grid-row">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/q1.png" alt="Blush Option 1" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/q2.png" alt="Blush Option 2" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/q3.png" alt="Blush Option 3" class="grid-item-lg">
+                    </div>
+            
+                    <!-- Grid 2: 4 images in a 2x2 layout (50x50px) -->
+                    <div class="grid-container blush-grid-square">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/c1.png" alt="Blush Option 4" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/c2.png" alt="Blush Option 5" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/c3.png" alt="Blush Option 6" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Blush/c4.png" alt="Blush Option 7" class="grid-item-sm">
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="section bangs-section">
+                <h2 class="section-title">Bangs</h2>
+            
+                <div class="bangs-grids-container">
+                    <!-- Grid 1: 25 images in a 5x5 layout (75x75px) -->
+                    <div class="grid-container bangs-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b1.png" alt="Bangs Option 1" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b2.png" alt="Bangs Option 2" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b3.png" alt="Bangs Option 3" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b4.png" alt="Bangs Option 4" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b5.png" alt="Bangs Option 5" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b6.png" alt="Bangs Option 6" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b7.png" alt="Bangs Option 7" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b8.png" alt="Bangs Option 8" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b9.png" alt="Bangs Option 9" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b10.png" alt="Bangs Option 10" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b11.png" alt="Bangs Option 11" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b12.png" alt="Bangs Option 12" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b13.png" alt="Bangs Option 13" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b14.png" alt="Bangs Option 14" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b15.png" alt="Bangs Option 15" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b16.png" alt="Bangs Option 16" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b17.png" alt="Bangs Option 17" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b18.png" alt="Bangs Option 18" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b19.png" alt="Bangs Option 19" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b20.png" alt="Bangs Option 20" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b21.png" alt="Bangs Option 21" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b22.png" alt="Bangs Option 22" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b23.png" alt="Bangs Option 23" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b24.png" alt="Bangs Option 24" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b25.png" alt="Bangs Option 25" class="grid-item-lg">
+                    </div>
+            
+                    <!-- Grid 2: 7 images in a 3x3 layout (50x50px) -->
+                    <div class="grid-container bangs-grid-small">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c1.png" alt="Bangs Option 26" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c2.png" alt="Bangs Option 27" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c3.png" alt="Bangs Option 28" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c4.png" alt="Bangs Option 29" class="grid-item-sm">
+            
+                        <!-- Centered 7th image -->
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c5.png" alt="Bangs Option 30" class="grid-item-sm special-item">
+            
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c6.png" alt="Bangs Option 31" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c7.png" alt="Bangs Option 32" class="grid-item-sm">
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="section hair-section">
+                <h2 class="section-title">Hair</h2>
+            
+                <div class="hair-grids-container">
+                    <!-- Grid 1: 25 images in a 5x5 layout (100x100px) -->
+                    <div class="grid-container hair-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h1.png" alt="Hair Option 1" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h2.png" alt="Hair Option 2" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h3.png" alt="Hair Option 3" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h4.png" alt="Hair Option 4" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h5.png" alt="Hair Option 5" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h6.png" alt="Hair Option 6" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h7.png" alt="Hair Option 7" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h8.png" alt="Hair Option 8" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h9.png" alt="Hair Option 9" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h10.png" alt="Hair Option 10" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h11.png" alt="Hair Option 11" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h12.png" alt="Hair Option 12" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h13.png" alt="Hair Option 13" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h14.png" alt="Hair Option 14" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h15.png" alt="Hair Option 15" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h16.png" alt="Hair Option 16" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h17.png" alt="Hair Option 17" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h18.png" alt="Hair Option 18" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h19.png" alt="Hair Option 19" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h20.png" alt="Hair Option 20" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h2.png" alt="Hair Option 21" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h22.png" alt="Hair Option 22" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h23.png" alt="Hair Option 23" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h24.png" alt="Hair Option 24" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h25.png" alt="Hair Option 25" class="grid-item-lg">
+                    </div>
+            
+                    <!-- Grid 2: 7 images in a 3x3 layout (50x50px) with the 7th image centered -->
+                    <div class="grid-container hair-grid-small">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c1.png" alt="Hair Option 26" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c2.png" alt="Hair Option 27" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c3.png" alt="Hair Option 28" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c4.png" alt="Hair Option 29" class="grid-item-sm">
+            
+                        <!-- Centered 7th image -->
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c5.png" alt="Hair Option 30" class="grid-item-sm special-item">
+            
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c6.png" alt="Hair Option 31" class="grid-item-sm">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c7.png" alt="Hair Option 32" class="grid-item-sm">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section tops-section">
+                <h2 class="section-title">Tops</h2>
+            
+                <div class="tops-grids-container">
+                    <!-- Grid 1: 5x2 layout (100x100px) -->
+                    <div class="grid-container tops-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t1.png" alt="Tops Option 1" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t2.png" alt="Tops Option 2" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t3.png" alt="Tops Option 3" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t4.png" alt="Tops Option 4" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t5.png" alt="Tops Option 5" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t6.png" alt="Tops Option 6" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t7.png" alt="Tops Option 7" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t8.png" alt="Tops Option 8" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t9.png" alt="Tops Option 9" class="grid-item-lg">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t10.png" alt="Tops Option 10" class="grid-item-lg">
+                    </div>
+            
+                    <!-- Grid 2: 7x2 layout (50x50px) -->
+                    <div class="grid-container tops-grid-small">
+                        <img src="Resources/colors/white.png" alt="Tops Option 11" class="grid-item-sm">
+                        <img src="Resources/colors/black.png" alt="Tops Option 12" class="grid-item-sm">
+                        <img src="Resources/colors/black.png" alt="Tops Option 13" class="grid-item-sm">
+                        <img src="Resources/colors/black.png" alt="Tops Option 14" class="grid-item-sm">
+                        <img src="Resources/colors/pink.png" alt="Tops Option 15" class="grid-item-sm">
+                        <img src="Resources/colors/pink.png" alt="Tops Option 16" class="grid-item-sm">
+                        <img src="Resources/colors/pink.png" alt="Tops Option 17" class="grid-item-sm">
+                        <img src="Resources/colors/yellow.png" alt="Tops Option 18" class="grid-item-sm">
+                        <img src="Resources/colors/yellow.png" alt="Tops Option 19" class="grid-item-sm">
+                        <img src="Resources/colors/lavander.png" alt="Tops Option 20" class="grid-item-sm">
+                        <img src="Resources/colors/lavander.png" alt="Tops Option 21" class="grid-item-sm">
+                        <img src="Resources/colors/lavander.png" alt="Tops Option 22" class="grid-item-sm">
+                        <img src="Resources/colors/blue.png" alt="Tops Option 23" class="grid-item-sm">
+                        <img src="Resources/colors/blue.png" alt="Tops Option 24" class="grid-item-sm">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section skirts-section">
+                <h2 class="section-title">Skirts</h2>
+            
+                <div class="skirts-grids-wrapper">
+                    <div class="skirts-grids-container">
+                        <!-- Grid 1: 5x2 layout (100x100px) -->
+                        <div class="grid-container skirts-grid-large">
+                            <img src="images/skirts1.png" alt="Skirt Option 1" class="grid-item-lg">
+                            <img src="images/skirts2.png" alt="Skirt Option 2" class="grid-item-lg">
+                            <img src="images/skirts3.png" alt="Skirt Option 3" class="grid-item-lg">
+                            <img src="images/skirts4.png" alt="Skirt Option 4" class="grid-item-lg">
+                            <img src="images/skirts5.png" alt="Skirt Option 5" class="grid-item-lg">
+                            <img src="images/skirts6.png" alt="Skirt Option 6" class="grid-item-lg">
+                            <img src="images/skirts7.png" alt="Skirt Option 7" class="grid-item-lg">
+                            <img src="images/skirts8.png" alt="Skirt Option 8" class="grid-item-lg">
+                            <img src="images/skirts9.png" alt="Skirt Option 9" class="grid-item-lg">
+                            <img src="images/skirts10.png" alt="Skirt Option 10" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 7x2 layout (50x50px) -->
+                        <div class="grid-container skirts-grid-small">
+                            <img src="images/skirts11.png" alt="Skirt Option 11" class="grid-item-sm">
+                            <img src="images/skirts12.png" alt="Skirt Option 12" class="grid-item-sm">
+                            <img src="images/skirts13.png" alt="Skirt Option 13" class="grid-item-sm">
+                            <img src="images/skirts14.png" alt="Skirt Option 14" class="grid-item-sm">
+                            <img src="images/skirts15.png" alt="Skirt Option 15" class="grid-item-sm">
+                            <img src="images/skirts16.png" alt="Skirt Option 16" class="grid-item-sm">
+                            <img src="images/skirts17.png" alt="Skirt Option 17" class="grid-item-sm">
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section dresses-section">
+                <h2 class="section-title">Dresses</h2>
+            
+                <div class="dresses-grids-wrapper">
+                    <div class="dresses-grids-container">
+                        <!-- Grid 1: 5x1 layout (100x100px) -->
+                        <div class="grid-container dresses-grid-large">
+                            <img src="images/dress1.png" alt="Dress Option 1" class="grid-item-lg">
+                            <img src="images/dress2.png" alt="Dress Option 2" class="grid-item-lg">
+                            <img src="images/dress3.png" alt="Dress Option 3" class="grid-item-lg">
+                            <img src="images/dress4.png" alt="Dress Option 4" class="grid-item-lg">
+                            <img src="images/dress5.png" alt="Dress Option 5" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 5x2 layout (50x50px) -->
+                        <div class="grid-container dresses-grid-small">
+                            <img src="images/dress6.png" alt="Dress Option 6" class="grid-item-sm">
+                            <img src="images/dress7.png" alt="Dress Option 7" class="grid-item-sm">
+                            <img src="images/dress8.png" alt="Dress Option 8" class="grid-item-sm">
+                            <img src="images/dress9.png" alt="Dress Option 9" class="grid-item-sm">
+                            <img src="images/dress10.png" alt="Dress Option 10" class="grid-item-sm">
+                            <img src="images/dress11.png" alt="Dress Option 11" class="grid-item-sm">
+                            <img src="images/dress12.png" alt="Dress Option 12" class="grid-item-sm">
+                            <img src="images/dress13.png" alt="Dress Option 13" class="grid-item-sm">
+                            <img src="images/dress14.png" alt="Dress Option 14" class="grid-item-sm">
+                            <img src="images/dress15.png" alt="Dress Option 15" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section jackets-section">
+                <h2 class="section-title">Jackets</h2>
+            
+                <div class="jackets-grids-wrapper">
+                    <div class="jackets-grids-container">
+                        <!-- Grid 1: 7x1 layout (100x100px) -->
+                        <div class="grid-container jackets-grid-large">
+                            <img src="images/jacket1.png" alt="Jacket Option 1" class="grid-item-lg">
+                            <img src="images/jacket2.png" alt="Jacket Option 2" class="grid-item-lg">
+                            <img src="images/jacket3.png" alt="Jacket Option 3" class="grid-item-lg">
+                            <img src="images/jacket4.png" alt="Jacket Option 4" class="grid-item-lg">
+                            <img src="images/jacket5.png" alt="Jacket Option 5" class="grid-item-lg">
+                            <img src="images/jacket6.png" alt="Jacket Option 6" class="grid-item-lg">
+                            <img src="images/jacket7.png" alt="Jacket Option 7" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 5x2 layout (50x50px) -->
+                        <div class="grid-container jackets-grid-small">
+                            <img src="images/jacket8.png" alt="Jacket Option 8" class="grid-item-sm">
+                            <img src="images/jacket9.png" alt="Jacket Option 9" class="grid-item-sm">
+                            <img src="images/jacket10.png" alt="Jacket Option 10" class="grid-item-sm">
+                            <img src="images/jacket11.png" alt="Jacket Option 11" class="grid-item-sm">
+                            <img src="images/jacket12.png" alt="Jacket Option 12" class="grid-item-sm">
+                            <img src="images/jacket13.png" alt="Jacket Option 13" class="grid-item-sm">
+                            <img src="images/jacket14.png" alt="Jacket Option 14" class="grid-item-sm">
+                            <img src="images/jacket15.png" alt="Jacket Option 15" class="grid-item-sm">
+                            <img src="images/jacket16.png" alt="Jacket Option 16" class="grid-item-sm">
+                            <img src="images/jacket17.png" alt="Jacket Option 17" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section socks-section">
+                <h2 class="section-title">Socks</h2>
+            
+                <div class="socks-grids-wrapper">
+                    <div class="socks-grids-container">
+                        <!-- Grid 1: 4x1 layout (100x100px) -->
+                        <div class="grid-container socks-grid-large">
+                            <img src="images/socks1.png" alt="Socks Option 1" class="grid-item-lg">
+                            <img src="images/socks2.png" alt="Socks Option 2" class="grid-item-lg">
+                            <img src="images/socks3.png" alt="Socks Option 3" class="grid-item-lg">
+                            <img src="images/socks4.png" alt="Socks Option 4" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 5x2 layout (50x50px) -->
+                        <div class="grid-container socks-grid-small">
+                            <img src="images/socks5.png" alt="Socks Option 5" class="grid-item-sm">
+                            <img src="images/socks6.png" alt="Socks Option 6" class="grid-item-sm">
+                            <img src="images/socks7.png" alt="Socks Option 7" class="grid-item-sm">
+                            <img src="images/socks8.png" alt="Socks Option 8" class="grid-item-sm">
+                            <img src="images/socks9.png" alt="Socks Option 9" class="grid-item-sm">
+                            <img src="images/socks10.png" alt="Socks Option 10" class="grid-item-sm">
+                            <img src="images/socks11.png" alt="Socks Option 11" class="grid-item-sm">
+                            <img src="images/socks12.png" alt="Socks Option 12" class="grid-item-sm">
+                            <img src="images/socks13.png" alt="Socks Option 13" class="grid-item-sm">
+                            <img src="images/socks14.png" alt="Socks Option 14" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section shoes-section">
+                <h2 class="section-title">Shoes</h2>
+            
+                <div class="shoes-grids-wrapper">
+                    <div class="shoes-grids-container">
+                        <!-- Grid 1: 6x1 layout (100x100px) -->
+                        <div class="grid-container shoes-grid-large">
+                            <img src="images/shoes1.png" alt="Shoes Option 1" class="grid-item-lg">
+                            <img src="images/shoes2.png" alt="Shoes Option 2" class="grid-item-lg">
+                            <img src="images/shoes3.png" alt="Shoes Option 3" class="grid-item-lg">
+                            <img src="images/shoes4.png" alt="Shoes Option 4" class="grid-item-lg">
+                            <img src="images/shoes5.png" alt="Shoes Option 5" class="grid-item-lg">
+                            <img src="images/shoes6.png" alt="Shoes Option 6" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 5x1 layout (50x50px) -->
+                        <div class="grid-container shoes-grid-small">
+                            <img src="images/shoes7.png" alt="Shoes Option 7" class="grid-item-sm">
+                            <img src="images/shoes8.png" alt="Shoes Option 8" class="grid-item-sm">
+                            <img src="images/shoes9.png" alt="Shoes Option 9" class="grid-item-sm">
+                            <img src="images/shoes10.png" alt="Shoes Option 10" class="grid-item-sm">
+                            <img src="images/shoes11.png" alt="Shoes Option 11" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section legwarmers-section">
+                <h2 class="section-title">Leg Warmers</h2>
+            
+                <div class="legwarmers-grids-wrapper">
+                    <div class="legwarmers-grids-container">
+                        <!-- Grid 1: 5x1 layout (100x100px) -->
+                        <div class="grid-container legwarmers-grid-large">
+                            <img src="images/legwarmers1.png" alt="Leg Warmers Option 1" class="grid-item-lg">
+                            <img src="images/legwarmers2.png" alt="Leg Warmers Option 2" class="grid-item-lg">
+                            <img src="images/legwarmers3.png" alt="Leg Warmers Option 3" class="grid-item-lg">
+                            <img src="images/legwarmers4.png" alt="Leg Warmers Option 4" class="grid-item-lg">
+                            <img src="images/legwarmers5.png" alt="Leg Warmers Option 5" class="grid-item-lg">
+                        </div>
+            
+                        <!-- Grid 2: 5x1 layout (50x50px) -->
+                        <div class="grid-container legwarmers-grid-small">
+                            <img src="images/legwarmers6.png" alt="Leg Warmers Option 6" class="grid-item-sm">
+                            <img src="images/legwarmers7.png" alt="Leg Warmers Option 7" class="grid-item-sm">
+                            <img src="images/legwarmers8.png" alt="Leg Warmers Option 8" class="grid-item-sm">
+                            <img src="images/legwarmers9.png" alt="Leg Warmers Option 9" class="grid-item-sm">
+                            <img src="images/legwarmers10.png" alt="Leg Warmers Option 10" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section accessories1-section">
+                <h2 class="section-title">Accessories 1</h2>
+            
+                <div class="accessories1-grids-wrapper">
+                    <div class="accessories1-grids-container">
+                        <!-- Grid 1: 11x2 layout (50x50px) -->
+                        <div class="grid-container accessories1-grid-large">
+                            <img src="images/accessory1.png" alt="Accessory Option 1" class="grid-item-sm">
+                            <img src="images/accessory2.png" alt="Accessory Option 2" class="grid-item-sm">
+                            <img src="images/accessory3.png" alt="Accessory Option 3" class="grid-item-sm">
+                            <img src="images/accessory4.png" alt="Accessory Option 4" class="grid-item-sm">
+                            <img src="images/accessory5.png" alt="Accessory Option 5" class="grid-item-sm">
+                            <img src="images/accessory6.png" alt="Accessory Option 6" class="grid-item-sm">
+                            <img src="images/accessory7.png" alt="Accessory Option 7" class="grid-item-sm">
+                            <img src="images/accessory8.png" alt="Accessory Option 8" class="grid-item-sm">
+                            <img src="images/accessory9.png" alt="Accessory Option 9" class="grid-item-sm">
+                            <img src="images/accessory10.png" alt="Accessory Option 10" class="grid-item-sm">
+                            <img src="images/accessory11.png" alt="Accessory Option 11" class="grid-item-sm">
+                            <img src="images/accessory12.png" alt="Accessory Option 12" class="grid-item-sm">
+                            <img src="images/accessory13.png" alt="Accessory Option 13" class="grid-item-sm">
+                            <img src="images/accessory14.png" alt="Accessory Option 14" class="grid-item-sm">
+                            <img src="images/accessory15.png" alt="Accessory Option 15" class="grid-item-sm">
+                            <img src="images/accessory16.png" alt="Accessory Option 16" class="grid-item-sm">
+                            <img src="images/accessory17.png" alt="Accessory Option 17" class="grid-item-sm">
+                            <img src="images/accessory18.png" alt="Accessory Option 18" class="grid-item-sm">
+                            <img src="images/accessory19.png" alt="Accessory Option 19" class="grid-item-sm">
+                            <img src="images/accessory20.png" alt="Accessory Option 20" class="grid-item-sm">
+                            <img src="images/accessory21.png" alt="Accessory Option 21" class="grid-item-sm">
+                            <img src="images/accessory22.png" alt="Accessory Option 22" class="grid-item-sm">
+                        </div>
+            
+                        <!-- Grid 2: 5x1 layout (50x50px) -->
+                        <div class="grid-container accessories1-grid-small">
+                            <img src="images/accessory23.png" alt="Accessory Option 23" class="grid-item-sm">
+                            <img src="images/accessory24.png" alt="Accessory Option 24" class="grid-item-sm">
+                            <img src="images/accessory25.png" alt="Accessory Option 25" class="grid-item-sm">
+                            <img src="images/accessory26.png" alt="Accessory Option 26" class="grid-item-sm">
+                            <img src="images/accessory27.png" alt="Accessory Option 27" class="grid-item-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
     <script>
