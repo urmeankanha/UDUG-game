@@ -1,0 +1,2005 @@
+@font-face {
+    font-family: 'Monster';
+    src: url('fonts/MonsterFriendFore.woff2') format('woff2'),
+         url('fonts/MonsterFriendFore.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background: #ffb3c6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+}
+
+/* Dim Background Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.section:first-child {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.main-image {
+width: 200px;
+height: 200px;
+object-fit: cover;
+border: 3px solid black; /* Adds border to main image */
+border-radius: 10px; /* Optional: rounded edges */
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(2, 100px);
+gap: 10px;
+padding: 100px;
+}
+
+.grid-item {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black; /* Adds border to grid images */
+border-radius: 10px; /* Optional: rounded edges */
+}
+
+
+/* Fullscreen Popup */
+.fullscreen-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fb6f92;
+    color: palegoldenrod;
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    line-height: 40px;
+}
+
+/* Header Styling */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header-container {
+    overflow: hidden;
+    background: #fb6f92;
+    width: 30%;
+    white-space: nowrap;
+    border-radius: 0px 10px 25px 0px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.scroll-wrapper {
+    display: flex;
+    width: max-content;
+    animation: continuousScroll 5s linear infinite;
+    padding: 0;
+    margin: 0;
+}
+
+.scrolling-text {
+    font-family: 'Monster', sans-serif;
+    font-size: 50px;
+    color: palegoldenrod;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes continuousScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Now Playing Text - Aligned Top Right */
+.test3 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Monster', sans-serif;
+    font-size: 14px;
+    color: palegoldenrod;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    margin: -6px;
+    border-radius: 10px;
+}
+
+/* Main Content Styling */
+.main-container {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-frame {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: white;
+    background: #ffc2d1;
+    height: 100vh;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.right-frame {
+    width: 90%;
+    overflow-y: auto;
+    height: 100vh;
+    background: #ff8fab;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.right-frame::-webkit-scrollbar {
+    width: 0px;
+}
+
+.section {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-family: 'Monster', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    height: 100%;
+}
+.eyes-section {
+display: flex;
+gap: -100px; /* Adds spacing between the two grids */
+flex-wrap: nowrap; /* Ensures both grids stay in a single line */
+}
+
+/* Large Grid (100px x 100px images) */
+.large-grid {
+display: grid;
+grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(3, 100px);
+gap: 10px;
+}
+
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 10px;
+}
+
+/* Small Grid (50px x 50px images) */
+.small-grid {
+display: grid;
+grid-template-columns: repeat(3, 50px);
+grid-template-rows: repeat(3, 50px);
+gap: 10px;
+}
+
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+/* Center the 7th image in both grids */
+.special-item-lg {
+grid-column: 2;
+grid-row: 3;
+}
+
+.special-item-sm {
+grid-column: 2;
+grid-row: 3;
+}
+
+.mouth-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: right;
+gap: 15px;
+}
+
+/* Style the section title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+}
+
+/* Grid for 8 mouth images */
+.mouth-grid {
+display: grid;
+grid-template-columns: repeat(4, 100px); /* 4 images per row */
+grid-template-rows: repeat(2, 100px); /* 2 rows */
+gap: 10px;
+}
+
+/* Style for images */
+.grid-item {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 10px;
+}
+
+.brows-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 15px;
+}
+
+/* Style the section title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+}
+
+/* Grid for 6 brows images */
+.brows-grid {
+display: grid;
+grid-template-columns: repeat(3, 100px); /* 3 images per row */
+grid-template-rows: repeat(2, 100px); /* 2 rows */
+gap: 10px;
+}
+
+/* Style for images */
+.grid-item {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 10px;
+}
+
+.blush-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 10px;
+}
+
+/* Style the section title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+}
+
+/* Make both grids appear in the same row */
+.blush-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px; /* Space between the two grids */
+}
+
+/* Grid 1: 3 images in one row (100x100px) */
+.blush-grid-row {
+display: grid;
+grid-template-columns: repeat(3, 100px);
+grid-template-rows: 100px;
+gap: 10px;
+}
+
+/* Grid 2: 4 images in a 2x2 layout (50x50px) */
+.blush-grid-square {
+display: grid;
+grid-template-columns: repeat(2, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 5px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 10px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.bangs-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 10px;
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+}
+
+/* Align both grids in the same row */
+.bangs-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+/* Large Grid: 25 images in a 5x5 layout (75x75px) */
+.bangs-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 75px);
+grid-template-rows: repeat(5, 75px);
+gap: 40px;
+margin-left: 10px;
+}
+
+/* Small Grid: 7 images in a 3x3 layout (50x50px) */
+.bangs-grid-small {
+display: grid;
+grid-template-columns: repeat(3, 50px);
+grid-template-rows: repeat(3, 50px);
+gap: 10px;
+}
+
+/* Style for large images (75x75px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+/* Ensure the 7th image is centered in the 3x3 grid */
+.special-item {
+grid-column: 2; /* Puts it in the middle column */
+grid-row: 2; /* Puts it in the middle row */
+}
+
+.hair-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+}
+
+/* Align both grids in the same row */
+.hair-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 00px;
+margin-left: 40px;
+margin-right: 20px;
+}
+
+/* Large Grid: 25 images in a 5x5 layout (100x100px) */
+.hair-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(5, 100px);
+gap: 10px;
+
+}
+
+/* Small Grid: 7 images in a 3x3 layout (50x50px) */
+.hair-grid-small {
+display: grid;
+grid-template-columns: repeat(3, 50px);
+grid-template-rows: repeat(3, 50px);
+gap: 10px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+gap: 10px;
+
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+/* Ensure the 7th image is centered in the 3x3 grid */
+.special-item {
+grid-column: 2; /* Puts it in the middle column */
+grid-row: 2; /* Puts it in the middle row */
+}
+
+.tops-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.tops-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.tops-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 5x2 layout (100x100px) */
+.tops-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(2, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 7x2 layout (50x50px) */
+.tops-grid-small {
+display: grid;
+grid-template-columns: repeat(7, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.skirts-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.skirts-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.skirts-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 5x2 layout (100x100px) */
+.skirts-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(2, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 7x2 layout (50x50px) */
+.skirts-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.dresses-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.dresses-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.dresses-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 5x1 layout (100x100px) */
+.dresses-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(1, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.dresses-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.jackets-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.jackets-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.jackets-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 7x1 layout (100x100px) */
+.jackets-grid-large {
+display: grid;
+grid-template-columns: repeat(7, 100px);
+grid-template-rows: repeat(1, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.jackets-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.socks-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.socks-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.socks-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 4x1 layout (100x100px) */
+.socks-grid-large {
+display: grid;
+grid-template-columns: repeat(4, 100px);
+grid-template-rows: repeat(1, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x2 layout (50x50px) */
+.socks-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.shoes-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.shoes-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.shoes-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 6x1 layout (100x100px) */
+.shoes-grid-large {
+display: grid;
+grid-template-columns: repeat(6, 100px);
+grid-template-rows: repeat(1, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.shoes-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(1, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.legwarmers-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.legwarmers-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.legwarmers-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 5x1 layout (100x100px) */
+.legwarmers-grid-large {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(1, 100px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.legwarmers-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(1, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for large images (100x100px) */
+.grid-item-lg {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+/* Style for small images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+.accessories1-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+overflow: visible; /* Ensures nothing is cut off */
+}
+
+/* Section Title */
+.section-title {
+font-family: 'Monster', sans-serif;
+font-size: 24px;
+color: black;
+margin-bottom: 10px;
+text-align: center;
+}
+
+/* Wrapper to ensure grids stay centered and visible */
+.accessories1-grids-wrapper {
+display: flex;
+justify-content: center;
+width: 100%;
+min-width: 600px; /* Ensures enough space for both grids */
+overflow: visible; /* Prevents images from being cut */
+}
+
+/* Container holding both grids */
+.accessories1-grids-container {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap; /* Allows wrapping if needed */
+max-width: 100%;
+overflow: visible;
+}
+
+/* Large Grid: 11x2 layout (50x50px) */
+.accessories1-grid-large {
+display: grid;
+grid-template-columns: repeat(11, 50px);
+grid-template-rows: repeat(2, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -50px;
+}
+
+/* Small Grid: 5x1 layout (50x50px) */
+.accessories1-grid-small {
+display: grid;
+grid-template-columns: repeat(5, 50px);
+grid-template-rows: repeat(1, 50px);
+gap: 10px;
+justify-content: center;
+margin-top: -150px;
+}
+
+/* Style for all images (50x50px) */
+.grid-item-sm {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border: 2px solid black;
+border-radius: 5px;
+}
+
+
+
+/* Different colors for each section */
+.section:nth-child(1) { background: #FF6666; }    /* Deep red */
+.section:nth-child(2) { background: #FF884D; }    /* Burnt orange */
+.section:nth-child(3) { background: #FFDD4D; }    /* Golden yellow */
+.section:nth-child(4) { background: #66FF66; }    /* Electric green */
+.section:nth-child(5) { background: #4DFFFF; }    /* Electric cyan */
+.section:nth-child(6) { background: #6666FF; }    /* Deep purple */
+.section:nth-child(7) { background: #FF66FF; }    /* Hot pink */
+.section:nth-child(8) { background: #FF8080; }    /* Bright coral */
+.section:nth-child(9) { background: #FF6347; }    /* Tomato red */
+.section:nth-child(10) { background: #33FF99; }   /* Neon green */
+.section:nth-child(11) { background: #3366FF; }   /* Royal blue */
+.section:nth-child(12) { background: #FF33FF; }   /* Magenta */
+.section:nth-child(13) { background: #FF944D; }   /* Tangerine */
+.section:nth-child(14) { background: #FF4D4D; }   /* Cherry red */
+.section:nth-child(15) { background: #33FFFF; }   /* Electric blue */
+.section:nth-child(16) { background: #B36666; }   /* Deep mauve */
+.section:nth-child(17) { background: #6699FF; }   /* Azure blue */
+.section:nth-child(18) { background: #FF66B3; }
+
+.left-frame {
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #FF99CC;
+height: 100vh;
+position: relative;
+overflow: hidden;
+}
+body {
+    background: #FF66B3;  /* Darker pink for the body background */
+    /* ...existing styles... */
+}
+/* Container for stacked images, centered */
+.image-container {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: auto;
+height: auto;
+}
+
+/* Ensure all images are stacked and centered */
+.layer-img {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: auto;
+height: auto;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.woff2') format('woff2'),
+        url('fonts/Minecraft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monster';
+    src: url('fonts/MonsterFriendFore.woff2') format('woff2'),
+        url('fonts/MonsterFriendFore.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.trans {
+    background: rgba(0, 0, 0, 40%);
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px,6px 6px 0px 0px,7px 7px 0px 0px, 8px 8px 0px 0px, 9px 9px 0px 0px,10px 10px 0px 0px;
+}
+
+.test1 {
+    font-family:'Minecraft', 'serif';
+    font-size: 20px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 35px;
+    padding-bottom: 10px;
+}
+
+.test2 {
+    font-family:'Monster', 'serif';
+    font-size: 40px;
+    color: #B19CD9;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 15px;
+}
+
+body{
+    background: #ffb3c6;
+}
+
+
+
+.blinker {
+    font-family:'Minecraft', 'serif';
+    font-size: 25px;
+    color: rgb(45, 45, 45);
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-right: 100px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.test3 {
+    font-family:'Monster', 'serif';
+    font-size: 14px;
+    color: black;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: -60px;
+}
+
+.test4 {
+    font-family:'Monster', 'serif';
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    padding-left:10;
+}
+
+.button-54 {
+    font-family: "Monster", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 10px;
+    padding-bottom: -50px;
+ }
+
+  
+  .button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
+
+  .button-54-fullscreen {
+    font-family: "Monster", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: -5;
+ }
+  
+  .button-54-fullscreen:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54-fullscreen {
+      padding: 0.25em 0.75em;
+    }
+  }
+/* Add these styles for visual feedback */
+.skin-selected,
+.eye-type-selected,
+.eye-color-selected,
+.mouth-selected,
+.hair-selected,
+.color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+/* Add these styles for visual feedback */
+.eye-type-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+}
+
+.eye-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+}
+
+/* Optional: Style for unselectable items when type isn't selected */
+.grid-container.small-grid img {
+    transition: opacity 0.3s ease;
+}
+
+.grid-container.small-grid img.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Add to your existing styles */
+.mouth-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.brows-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.brows-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+/* Add to your existing CSS */
+.bangs-type-selected,
+.bangs-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.hair-type-selected,
+.hair-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+/* Update the existing CSS classes */
+.grid-item-lg.selected,
+.grid-item-sm.selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.bangs-type-selected,
+.bangs-color-selected,
+.hair-type-selected,
+.hair-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Add specific styles for small grid items */
+.grid-container.bangs-grid-small .grid-item-sm,
+.grid-container.hair-grid-small .grid-item-sm {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tops-type-selected,
+.tops-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.tops-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tops-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.tops-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.skirts-type-selected,
+.skirts-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.skirts-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skirts-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.skirts-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.dresses-type-selected,
+.dresses-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.dresses-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dresses-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.dresses-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.jackets-type-selected,
+.jackets-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.jackets-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jackets-grid-large {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.jackets-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.socks-type-selected,
+.socks-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.socks-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socks-grid-large {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.socks-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.shoes-type-selected,
+.shoes-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.shoes-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shoes-grid-large {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.shoes-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.legwarmers-type-selected,
+.legwarmers-color-selected {
+    border: 3px solid green !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.legwarmers-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legwarmers-grid-large {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.legwarmers-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+
+.accessories1-section {
+    margin-bottom: 20px;
+}
+
+.accessories1-grids-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessories1-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessories1-grid-large {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.accessories1-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.acc1-type-selected,
+.acc1-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.accessories2-section {
+    margin-bottom: 20px;
+}
+
+.accessories2-grids-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessories2-grids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessories2-grid-large {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.accessories2-grid-small {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.acc2-type-selected,
+.acc2-color-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.blush-grid {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.blush-selected {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Add these styles for the section header and reset button */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.reset-button {
+    font-family: "Monster", sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    background: #ff8fab;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    transition: all 0.2s ease;
+    margin-right: 30px;
+}
+
+.reset-button:hover {
+    background: #ff6b6b;
+    transform: translateY(-1px);
+}
+
+.reset-button:active {
+    box-shadow: 0px 0px 0px 0px;
+    transform: translateY(2px);
+}
+
+/* Add section dividers */
+.section {
+    position: relative;
+    padding-bottom: 20px;  /* Space for the line */
+}
+
+.section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0%;  /* Start line 10% from left */
+    right: 0%;  /* End line 10% from right */
+    height: 2px;
+    background: rgba(0, 0, 0, 1);  /* Semi-transparent black line */
+    border-radius: 1px;
+}
+.right-frame {
+    /* ...existing styles... */
+    border-left: 2px solid rgba(0, 0, 0, 1);  /* Matches the horizontal dividers */
+    position: relative;
+}
+
+/* Add header divider */
+.header {
+    /* ...existing styles... */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0, 0, 0, 1);  /* Solid black line to match other dividers */
+    border-radius: 1px;
+    z-index: 1;  /* Ensure it appears above other elements */
+}
+/* Add scroll snap to right frame */
+.right-frame {
+    /* ...existing styles... */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Make sections snap */
+.section {
+    /* ...existing styles... */
+    scroll-snap-align: start;
+    min-height: 100vh;  /* Ensure each section takes up full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Optional: Add smooth scrolling to make the snap feel less abrupt */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Center all grids */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers horizontally */
+    justify-content: center;  /* Centers vertically */
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+/* Center grid containers only */
+.grid-container,
+.bangs-grids-container,
+.hair-grids-container,
+.tops-grids-container,
+.skirts-grids-container,
+.dresses-grids-container,
+.jackets-grids-container,
+.socks-grids-container,
+.shoes-grids-container,
+.legwarmers-grids-container,
+.accessories1-grids-container {
+    margin: 0 auto;  /* Centers the grid container itself */
+    width: fit-content;  /* Makes container only as wide as needed */
+}
+
+/* Remove the item centering from section */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers the grid containers horizontally */
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+.theme-display {
+    position: absolute;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border: 2px solid #FF66B3;
+    font-family: "Monster", sans-serif;
+    font-size: 22px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 000;
+}
+
+.theme-label {
+    color: #FF66B3;
+    font-weight: bold;
+}
+
+#current-theme {
+    color: palevioletred;
+    font-weight: bold;
+}
+
+/* Add at the end of your CSS file */
+
+.download-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-family: "Monster", sans-serif;
+    font-size: 25px;
+    background: white;
+    color: #FF66B3;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 00;
+    font-family: "Monster", sans-serif;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    transition: all 0.2s ease;
+}
+
+.download-button:hover {
+    background: #FF339A;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Monster", sans-serif;
+}
+
+.preview-container {
+    margin: 20px 0;
+    min-height: 200px;
+    border: 2px solid #FF66B3;
+    border-radius: 10px;
+}
+
+.download-creation-btn, .close-modal-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    font-family: "Monster", sans-serif;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-creation-btn {
+    background: #FF66B3;
+    color: white;
+}
+
+.download-creation-btn:hover {
+    background: #FF339A;
+}
+
+.close-modal-btn {
+    background: #808080;
+    color: white;
+}
+
+.close-modal-btn:hover {
+    background: #666666;
+}
+
+.preview-container {
+    display: inline-block;  /* Fit content exactly */
+    margin: 20px auto;     /* Center horizontally with margin */
+    border: 2px solid #FF66B3;
+    border-radius: 10px;
+    overflow: hidden;      /* Ensure content doesn't overflow */
+    line-height: 0;       /* Remove any extra space from inline element */
+}
+
+.preview-container canvas {
+    display: block;    /* Remove inline element spacing */
+    max-width: 100%;   /* Ensure it doesn't overflow container */
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: fit-content;  /* Changed to fit-content */
+    max-width: 80%;     /* Keep maximum width */
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Monster", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-container {
+    display: block;
+    margin: 20px 0;
+    border: 2px solid #FF66B3;
+    border-radius: 10px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.preview-container canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    /* Add these for centering the modal content */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: fit-content;
+    max-width: 80%;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Monster", sans-serif;
+    /* Remove the margin-top/margin properties */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add animation */
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}

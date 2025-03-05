@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>>work in progress build<<</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="Scripts/main.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <audio id="background-audio" preload="auto">
+        <source src="Audio/lovestheme.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+ 
+    </style>
+</head>
+<body>
+
+    <!-- Dim Background Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Fullscreen Popup -->
+    <div id="fullscreenPopup" class="fullscreen-popup" onclick="enterFullscreen()">
+        QUICK TIDIBITS- 
+            <br>1. Click anywhere to enter fullscreen mode.
+            <br>3. Press ESC to exit fullscreen mode.
+            <br>4. Press F5 to rest the all selections.
+            <br>5. Sometimes, clicking on an option might not work on the first try. If that happens, try clicking on another option, then click back on this option.
+            <br>6. There are reset buttons on all sections, you can reset something for that specefic section with it.
+            <br>7. Click export on the bottom left to save your creation. 
+            <br>8. For any option to show up on the left frame, you need to select the option, and its variation of color, only then it will show up.
+    </div>
+
+    <section class="header">
+        <div class="header-container">
+            <div class="scroll-wrapper">
+                <div class="scrolling-text">//// //// //// //// ////</div>
+                <div class="scrolling-text">//// //// //// //// ////</div>
+            </div>
+        </div>
+        <p id="now-playing" class="test3">🎵 Now Playing:<br> sleep deprived guy - love's theme</p>
+
+    </section>
+    
+    <div class="main-container">
+        <div class="left-frame">
+          <div class="theme-display">
+               <span class="theme-label">Current Theme: </span>
+               <span id="current-theme">Kawaii Pink</span>
+           </div>
+            <div class="image-container">
+            <img id="base-layer" src="Resources/in game/Body+Colors/c1.png" alt="Base Layer" class="layer-img" data-layer="base">
+            <img id="outline-layer" src="Resources/in game/Body+Colors/outline.png" alt="Middle Layer" class="layer-img" data-layer="outline">
+            <img id="socks-layer" src="Resources/placeholder.png" alt="" class="layer-img" data-layer="socks" style="z-index: 5;">
+            <img id="eyes-layer" src="Resources/in game/Eyes/e1_black.png" alt="Eye Layer" class="layer-img" data-layer="eyes">
+            <img id="hair-layer" src="Resources/in game/Hair/h1b.png" alt="Hair Layer" class="layer-img" data-layer="hair">
+            <img id="bangs-layer" src="Resources/in game/Bangs/b1b.png" alt="Bang Layer" class="layer-img" data-layer="bangs">
+            <img id="mouth-layer" src="Resources/in game/Mouth/m4.png" alt="Mouth Layer" class="layer-img" data-layer="mouth">
+            <img id="brows-layer" src="Resources/in game/Brows/w1.png" alt="Brows Layer" class="layer-img" data-layer="brows" style="z-index: 5;">
+            <img id="blush-layer" src="Resources/in game/Blush/q1.png" alt="Blush Layer" class="layer-img" data-layer="blush" style="z-index: 5;">
+            <img id="skirts-layer" src="Resources/in game/Skirts/s7b.png" alt="Skirts Layer" class="layer-img" data-layer="skirts" style="z-index: 5;">
+            <img id="tops-layer" src="Resources/placeholder.png" alt="Tops Layer" class="layer-img" data-layer="tops" style="z-index: 5;">
+            <img id="dresses-layer" src="Resources/placeholder.png" alt="" class="layer-img" data-layer="dresses" style="z-index: 5;">
+            <img id="jackets-layer" src="Resources/placeholder.png" alt="" class="layer-img" data-layer="jackets" style="z-index: 5;">
+            <img id="shoes-layer" src="Resources/placeholder.png" alt="S" class="layer-img" data-layer="shoes" style="z-index: 5;">
+            <img id="legwarmers-layer" src="Resources/placeholder.png" alt="" class="layer-img" data-layer="legwarmers" style="z-index: 5;">
+            <img id="acc1-layer" src="Resources/placeholder.png" alt="" class="layer-img" data-layer="acc1" style="z-index: 5;">
+            </div>
+            <button id="download-btn" class="download-button">IM DONE!</button>
+        </div>
+        
+        
+        <div class="right-frame">
+            <div class="section">Skins
+                <div class="grid-container">
+            <img src="Resources/ASSETS (ICONS ONLY)/Base/c1.png" 
+             class="grid-item" 
+             data-id="c1"
+             onclick="selectSkin('c1')"
+             alt="Skin 1">
+             <img src="Resources/ASSETS (ICONS ONLY)/Base/c3.png" 
+             class="grid-item" 
+             data-id="c3"
+             onclick="selectSkin('c3')"
+             alt="Skin 2">
+             <img src="Resources/ASSETS (ICONS ONLY)/Base/c4.png" 
+             class="grid-item" 
+             data-id="c4"
+             onclick="selectSkin('c4')"
+             alt="Skin 3">
+             <img src="Resources/ASSETS (ICONS ONLY)/Base/c5.png" 
+             class="grid-item" 
+             data-id="c5"
+             onclick="selectSkin('c5')"
+             alt="Skin 4">
+             <img src="Resources/ASSETS (ICONS ONLY)/Base/c6.png" 
+             class="grid-item" 
+             data-id="c6"
+             onclick="selectSkin('c6')"
+             alt="Skin 5">
+             <img src="Resources/ASSETS (ICONS ONLY)/Base/c7.png" 
+             class="grid-item" 
+             data-id="c7"
+             onclick="selectSkin('c7')"
+             alt="Skin 6">
+                </div>
+            </div>
+            <div class="section eyes-section">Eyes
+               
+                <div class="grid-container large-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e1.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e1"
+                    onclick="selectEyeType('e1')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e6.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e2"
+                    onclick="selectEyeType('e2')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e7.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e3"
+                    onclick="selectEyeType('e3')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e8.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e4"
+                    onclick="selectEyeType('e4')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e3.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e5"
+                    onclick="selectEyeType('e5')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e4.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg"
+                    data-eye="e6"
+                    onclick="selectEyeType('e6')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Eyes/e2.png" 
+                    alt="Eyes Option 1" 
+                    class="grid-item-lg special-item-sm"
+                    data-eye="e7"
+                    onclick="selectEyeType('e7')">
+                </div>
+            
+                <div class="grid-container small-grid">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c1.png" 
+             alt="Black" 
+             class="grid-item-sm"
+             data-color="black"
+             onclick="selectEyeColor('black')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c2.png" 
+             alt="White" 
+             class="grid-item-sm"
+             data-color="white"
+             onclick="selectEyeColor('white')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c3.png" 
+             alt="Red" 
+             class="grid-item-sm"
+             data-color="red"
+             onclick="selectEyeColor('red')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c4.png" 
+             alt="green" 
+             class="grid-item-sm"
+             data-color="green"
+             onclick="selectEyeColor('green')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c5.png" 
+             alt="lavander" 
+             class="grid-item-sm"
+             data-color="lavander"
+             onclick="selectEyeColor('lavander')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c6.png" 
+             alt="pink" 
+             class="grid-item-sm"
+             data-color="pink"
+             onclick="selectEyeColor('pink')">
+             <img src="Resources/ASSETS (ICONS ONLY)/Eyes/c7.png" 
+             alt="brown" 
+             class="grid-item-sm special-item-sm""
+             data-color="brown"
+             onclick="selectEyeColor('brown')">
+                </div>
+            </div>
+            
+            <div class="section mouth-section">Mouth
+                <div class="grid-container mouth-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/1.png" 
+                         alt="Mouth Option 1" 
+                         class="grid-item"
+                         data-mouth="m1"
+                         onclick="selectMouth('m1')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/2.png" 
+                         alt="Mouth Option 2" 
+                         class="grid-item"
+                         data-mouth="m2"
+                         onclick="selectMouth('m2')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/3.png" 
+                         alt="Mouth Option 3" 
+                         class="grid-item"
+                         data-mouth="m3"
+                         onclick="selectMouth('m3')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/4.png" 
+                         alt="Mouth Option 4" 
+                         class="grid-item"
+                         data-mouth="m4"
+                         onclick="selectMouth('m4')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/5.png" 
+                         alt="Mouth Option 5" 
+                         class="grid-item"
+                         data-mouth="m5"
+                         onclick="selectMouth('m5')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/8.png" 
+                         alt="Mouth Option 6" 
+                         class="grid-item"
+                         data-mouth="m6"
+                         onclick="selectMouth('m6')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/6.png" 
+                         alt="Mouth Option 7" 
+                         class="grid-item"
+                         data-mouth="m7"
+                         onclick="selectMouth('m7')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Mouth/7.png" 
+                         alt="Mouth Option 8" 
+                         class="grid-item"
+                         data-mouth="m8"
+                         onclick="selectMouth('m8')">
+                </div>
+            </div>
+            
+            <div class="section brows-section">
+                <h2 class="section-title">Brows</h2>
+                <div class="grid-container brows-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w1.png" 
+                         alt="Brows Option 1" 
+                         class="grid-item"
+                         data-brows="w1"
+                         onclick="selectBrows('w1')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w3.png" 
+                         alt="Brows Option 2" 
+                         class="grid-item"
+                         data-brows="w2"
+                         onclick="selectBrows('w2')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w2.png" 
+                         alt="Brows Option 3" 
+                         class="grid-item"
+                         data-brows="w3"
+                         onclick="selectBrows('w3')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w5.png" 
+                         alt="Brows Option 4" 
+                         class="grid-item"
+                         data-brows="w4"
+                         onclick="selectBrows('w4')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w4.png" 
+                         alt="Brows Option 5" 
+                         class="grid-item"
+                         data-brows="w5"
+                         onclick="selectBrows('w5')">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Brows/w6.png" 
+                         alt="Brows Option 6" 
+                         class="grid-item"
+                         data-brows="w6"
+                         onclick="selectBrows('w6')">
+                </div>
+            </div>
+            
+            <div class="section blush-section">
+                <h2 class="section-title">Blush (toggle to select) </h2>
+                <div class="blush-grid">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Blush/q1.png" 
+                         alt="Toggle Blush" 
+                         class="grid-item-lg"
+                         id="blush-toggle"
+                         onclick="toggleBlush()">
+                </div>
+            </div>
+            
+            
+            <div class="section bangs-section">
+               <div class="section-header">
+                <h2 class="section-title">Bangs</h2>
+                <button class="reset-button" onclick="resetSection('bangs')">Reset</button>
+               </div>
+                <div class="bangs-grids-container">
+                    <!-- Grid 1: Bang types -->
+                    <div class="grid-container bangs-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b1.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b1"
+                             onclick="selectBangsType('b1')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b2.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b2"
+                             onclick="selectBangsType('b2')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b3.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b3"
+                             onclick="selectBangsType('b3')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b4.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b4"
+                             onclick="selectBangsType('b4')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b5.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b5"
+                             onclick="selectBangsType('b5')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b6.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b6"
+                             onclick="selectBangsType('b6')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b7.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b7"
+                             onclick="selectBangsType('b7')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b8.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b8"
+                             onclick="selectBangsType('b8')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b9.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b9"
+                             onclick="selectBangsType('b9')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b10.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b10"
+                             onclick="selectBangsType('b10')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b11.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b11"
+                             onclick="selectBangsType('b11')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b12.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b12"
+                             onclick="selectBangsType('b12')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b13.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b13"
+                             onclick="selectBangsType('b13')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b14.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b14"
+                             onclick="selectBangsType('b14')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b15.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b15"
+                             onclick="selectBangsType('b15')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b16.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b16"
+                             onclick="selectBangsType('b16')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b17.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b17"
+                             onclick="selectBangsType('b17')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b18.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b18"
+                             onclick="selectBangsType('b18')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b20.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b20"
+                             onclick="selectBangsType('b20')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b21.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b21"
+                             onclick="selectBangsType('b21')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b22.png" 
+                             alt="Bangs Option 2" 
+                             class="grid-item-lg"
+                             data-bangs="b22"
+                             onclick="selectBangsType('b22')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Bangs/b23.png" 
+                             alt="Bangs Option 1" 
+                             class="grid-item-lg"
+                             data-bangs="b23"
+                             onclick="selectBangsType('b23')">
+                    </div>
+            
+                    
+        <!-- Grid 2: Bang colors -->
+        <div class="grid-container bangs-grid-small">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c2.png" 
+                 alt="Black" 
+                 class="grid-item-sm"
+                 data-color="b"
+                 onclick="selectBangsColor('b')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c1.png" 
+                 alt="White" 
+                 class="grid-item-sm"
+                 data-color="w"
+                 onclick="selectBangsColor('w')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c3.png" 
+                 alt="Blonde" 
+                 class="grid-item-sm"
+                 data-color="bl"
+                 onclick="selectBangsColor('bl')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c4.png" 
+                 alt="Red" 
+                 class="grid-item-sm"
+                 data-color="r"
+                 onclick="selectBangsColor('r')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c5.png" 
+                 alt="Blue" 
+                 class="grid-item-sm"
+                 data-color="bu"
+                 onclick="selectBangsColor('bu')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c6.png" 
+                 alt="Cherry" 
+                 class="grid-item-sm"
+                 data-color="c"
+                 onclick="selectBangsColor('c')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c7.png" 
+                 alt="Pink" 
+                 class="grid-item-sm special-item-sm"
+                 data-color="p"
+                 onclick="selectBangsColor('p')">
+        </div>
+    </div>
+</div>
+            
+            
+            <div class="section hair-section">
+                <div class="section-header">
+                    <h2 class="section-title">Hair</h2>
+                    <button class="reset-button" onclick="resetSection('hair')">Reset</button>
+                   </div>
+            
+                <div class="hair-grids-container">
+                    <!-- Grid 1: 25 images in a 5x5 layout (100x100px) -->
+                    <div class="grid-container hair-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Hair/h1.png" 
+                 alt="Hair Option 1" 
+                 class="grid-item-lg"
+                 data-hair="h1"
+                 onclick="selectHairType('h1')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h2.png" 
+                 alt="Hair Option 2" 
+                 class="grid-item-lg"
+                 data-hair="h2"
+                 onclick="selectHairType('h2')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h3.png" 
+                 alt="Hair Option 3" 
+                 class="grid-item-lg"
+                 data-hair="h3"
+                 onclick="selectHairType('h3')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h4.png" 
+                 alt="Hair Option 4" 
+                 class="grid-item-lg"
+                 data-hair="h4"
+                 onclick="selectHairType('h4')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h5.png" 
+                 alt="Hair Option 5" 
+                 class="grid-item-lg"
+                 data-hair="h5"
+                 onclick="selectHairType('h5')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h6.png" 
+                 alt="Hair Option 6" 
+                 class="grid-item-lg"
+                 data-hair="h6"
+                 onclick="selectHairType('h6')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Hair/h7.png" 
+                 alt="Hair Option 1" 
+                 class="grid-item-lg"
+                 data-hair="h7"
+                 onclick="selectHairType('h7')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h8.png" 
+                 alt="Hair Option 2" 
+                 class="grid-item-lg"
+                 data-hair="h8"
+                 onclick="selectHairType('h8')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h9.png" 
+                 alt="Hair Option 3" 
+                 class="grid-item-lg"
+                 data-hair="h9"
+                 onclick="selectHairType('h9')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h10.png" 
+                 alt="Hair Option 4" 
+                 class="grid-item-lg"
+                 data-hair="h10"
+                 onclick="selectHairType('h10')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h11.png" 
+                 alt="Hair Option 5" 
+                 class="grid-item-lg"
+                 data-hair="h11"
+                 onclick="selectHairType('h11')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h12.png" 
+                 alt="Hair Option 6" 
+                 class="grid-item-lg"
+                 data-hair="h12"
+                 onclick="selectHairType('h12')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Hair/h13.png" 
+                 alt="Hair Option 1" 
+                 class="grid-item-lg"
+                 data-hair="h13"
+                 onclick="selectHairType('h13')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h14.png" 
+                 alt="Hair Option 2" 
+                 class="grid-item-lg"
+                 data-hair="h14"
+                 onclick="selectHairType('h14')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h15.png" 
+                 alt="Hair Option 3" 
+                 class="grid-item-lg"
+                 data-hair="h15"
+                 onclick="selectHairType('h15')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h16.png" 
+                 alt="Hair Option 4" 
+                 class="grid-item-lg"
+                 data-hair="h16"
+                 onclick="selectHairType('h16')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h17.png" 
+                 alt="Hair Option 5" 
+                 class="grid-item-lg"
+                 data-hair="h17"
+                 onclick="selectHairType('h17')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h18.png" 
+                 alt="Hair Option 6" 
+                 class="grid-item-lg"
+                 data-hair="h18"
+                 onclick="selectHairType('h18')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Hair/h19.png" 
+                 alt="Hair Option 1" 
+                 class="grid-item-lg"
+                 data-hair="h19"
+                 onclick="selectHairType('h19')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h20.png" 
+                 alt="Hair Option 2" 
+                 class="grid-item-lg"
+                 data-hair="h20"
+                 onclick="selectHairType('h20')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h22.png" 
+                 alt="Hair Option 4" 
+                 class="grid-item-lg"
+                 data-hair="h22"
+                 onclick="selectHairType('h22')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h23.png" 
+                 alt="Hair Option 5" 
+                 class="grid-item-lg"
+                 data-hair="h23"
+                 onclick="selectHairType('h23')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Hair/h24.png" 
+                 alt="Hair Option 6" 
+                 class="grid-item-lg"
+                 data-hair="h24"
+                 onclick="selectHairType('h24')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Hair/h25.png" 
+                 alt="Hair Option 6" 
+                 class="grid-item-lg"
+                 data-hair="h25"
+                 onclick="selectHairType('h25')">
+                    </div>
+            
+                    <!-- Grid 2: 7 images in a 3x3 layout (50x50px) with the 7th image centered -->
+                    <div class="grid-container hair-grid-small">
+                <img src="Resources/colors/black.png" 
+                 alt="Black" 
+                 class="grid-item-sm"
+                 data-color="b"
+                 onclick="selectHairColor('b')">
+            <img src="Resources/colors/white.png"" 
+                 alt="White" 
+                 class="grid-item-sm"
+                 data-color="w"
+                 onclick="selectHairColor('w')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c3.png"
+                 alt="Blonde" 
+                 class="grid-item-sm"
+                 data-color="bl"
+                 onclick="selectHairColor('bl')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c4.png"
+                 alt="Red" 
+                 class="grid-item-sm"
+                 data-color="r"
+                 onclick="selectHairColor('r')">
+            <img src="Resources/colors/blue.png" 
+                 alt="Blue" 
+                 class="grid-item-sm"
+                 data-color="bu"
+                 onclick="selectHairColor('bu')">
+            <img src="Resources/ASSETS (ICONS ONLY)/Bangs/c6.png" 
+                 alt="Cherry" 
+                 class="grid-item-sm"
+                 data-color="c"
+                 onclick="selectHairColor('c')">
+            <img src="Resources/colors/pink.png"
+                 alt="Pink" 
+                 class="grid-item-sm special-item-sm"
+                 data-color="p"
+                 onclick="selectHairColor('p')">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section tops-section">
+               <div class="section-header">
+                    <h2 class="section-title">Tops</h2>
+                    <button class="reset-button" onclick="resetSection('tops')">Reset</button>
+                   </div>
+                <div class="tops-grids-container">
+                    <!-- Grid 1: Top types -->
+                    <div class="grid-container tops-grid-large">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t1.png" 
+                             alt="Top Option 1" 
+                             class="grid-item-lg"
+                             data-tops="t1"
+                             onclick="selectTopsType('t1')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t2.png" 
+                             alt="Top Option 2" 
+                             class="grid-item-lg"
+                             data-tops="t2"
+                             onclick="selectTopsType('t2')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t3.png" 
+                             alt="Top Option 3" 
+                             class="grid-item-lg"
+                             data-tops="t3"
+                             onclick="selectTopsType('t3')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t4.png" 
+                             alt="Top Option 4" 
+                             class="grid-item-lg"
+                             data-tops="t4"
+                             onclick="selectTopsType('t4')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t5.png" 
+                             alt="Top Option 5" 
+                             class="grid-item-lg"
+                             data-tops="t5"
+                             onclick="selectTopsType('t5')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t6.png" 
+                             alt="Top Option 6" 
+                             class="grid-item-lg"
+                             data-tops="t6"
+                             onclick="selectTopsType('t6')">
+                             <img src="Resources/ASSETS (ICONS ONLY)/Tops/t7.png" 
+                             alt="Top Option 1" 
+                             class="grid-item-lg"
+                             data-tops="t7"
+                             onclick="selectTopsType('t7')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t8.png" 
+                             alt="Top Option 2" 
+                             class="grid-item-lg"
+                             data-tops="t8"
+                             onclick="selectTopsType('t8')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t9.png" 
+                             alt="Top Option 3" 
+                             class="grid-item-lg"
+                             data-tops="t9"
+                             onclick="selectTopsType('t9')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Tops/t10.png" 
+                             alt="Top Option 4" 
+                             class="grid-item-lg"
+                             data-tops="t10"
+                             onclick="selectTopsType('t10')">
+                    </div>
+            
+                    <!-- Grid 2: Top colors -->
+                    <div class="grid-container tops-grid-small">
+                        <img src="Resources/colors/black.png" 
+                             alt="Black" 
+                             class="grid-item-sm"
+                             data-color="b"
+                             onclick="selectTopsColor('b')">
+                        <img src="Resources/colors/black.png" 
+                             alt="Black" 
+                             class="grid-item-sm"
+                             data-color="b1"
+                             onclick="selectTopsColor('b1')">
+                        <img src="Resources/colors/black.png" 
+                             alt="Black" 
+                             class="grid-item-sm"
+                             data-color="b2"
+                             onclick="selectTopsColor('b2')">
+                        <img src="Resources/colors/white.png" 
+                             alt="White" 
+                             class="grid-item-sm"
+                             data-color="w"
+                             onclick="selectTopsColor('w')">
+                        <img src="Resources/colors/pink.png" 
+                             alt="Pink" 
+                             class="grid-item-sm"
+                             data-color="p"
+                             onclick="selectTopsColor('p')">
+                        <img src="Resources/colors/pink.png" 
+                             alt="Pink" 
+                             class="grid-item-sm"
+                             data-color="p1"
+                             onclick="selectTopsColor('p1')">
+                        <img src="Resources/colors/pink.png" 
+                             alt="Pink" 
+                             class="grid-item-sm"
+                             data-color="p2"
+                             onclick="selectTopsColor('p2')">
+                        <img src="Resources/colors/pink.png" 
+                             alt="Pink" 
+                             class="grid-item-sm"
+                             data-color="p3"
+                             onclick="selectTopsColor('p3')">
+                        <img src="Resources/colors/yellow.png"
+                             alt="Yellow"
+                             class="grid-item-sm"
+                             data-color="y"
+                             onclick="selectTopsColor('y')">
+                        <img src="Resources/colors/lavander.png"
+                             alt="Lavander"
+                             class="grid-item-sm"
+                             data-color="l"
+                             onclick="selectTopsColor('l')">
+                        <img src="Resources/colors/lavander.png"
+                             alt="Lavander"
+                             class="grid-item-sm"
+                             data-color="l1"
+                             onclick="selectTopsColor('l1')">
+                        <img src="Resources/colors/lavander.png"
+                             alt="Lavander"
+                             class="grid-item-sm"
+                             data-color="l2"
+                             onclick="selectTopsColor('l2')">
+                        <img src="Resources/colors/blue.png"
+                             alt="Blue"
+                             class="grid-item-sm"
+                             data-color="bu"
+                             onclick="selectTopsColor('bu')">
+                        <img src = "Resources/colors/blue.png"
+                             alt = "Blue"
+                             class = "grid-item-sm"
+                             data-color = "bu1"
+                             onclick = "selectTopsColor('bu1')">
+                        <img src = "Resources/colors/yellow.png"
+                             alt = "Blue"
+                             class = "grid-item-sm"
+                             data-color = "y1"
+                             onclick = "selectTopsColor('y1')">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section skirts-section">
+               <div class="section-header">
+                    <h2 class="section-title">Skirts</h2>
+                    <button class="reset-button" onclick="resetSection('skirts')">Reset</button>
+                   </div>
+               <div class="skirts-grids-container">
+                   <!-- Grid 1: Skirt types -->
+                   <div class="grid-container skirts-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s1.png" 
+                            alt="Skirt Option 1" 
+                            class="grid-item-lg"
+                            data-skirts="s1"
+                            onclick="selectSkirtsType('s1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s2.png" 
+                            alt="Skirt Option 2" 
+                            class="grid-item-lg"
+                            data-skirts="s2"
+                            onclick="selectSkirtsType('s2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s3.png" 
+                            alt="Skirt Option 3" 
+                            class="grid-item-lg"
+                            data-skirts="s3"
+                            onclick="selectSkirtsType('s3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s4.png" 
+                            alt="Skirt Option 4" 
+                            class="grid-item-lg"
+                            data-skirts="s4"
+                            onclick="selectSkirtsType('s4')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s5.png" 
+                            alt="Skirt Option 5" 
+                            class="grid-item-lg"
+                            data-skirts="s5"
+                            onclick="selectSkirtsType('s5')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s6.png" 
+                            alt="Skirt Option 6" 
+                            class="grid-item-lg"
+                            data-skirts="s6"
+                            onclick="selectSkirtsType('s6')">
+                           <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s7.png" 
+                            alt="Skirt Option 1" 
+                            class="grid-item-lg"
+                            data-skirts="s7"
+                            onclick="selectSkirtsType('s7')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s8.png"   
+                            alt="Skirt Option 2" 
+                            class="grid-item-lg"
+                            data-skirts="s8"
+                            onclick="selectSkirtsType('s8')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s9.png"
+                            alt="Skirt Option 3" 
+                            class="grid-item-lg"
+                            data-skirts="s9"
+                            onclick="selectSkirtsType('s9')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/s10.png"
+                            alt="Skirt Option 4" 
+                            class="grid-item-lg"
+                            data-skirts="s10"
+                            onclick="selectSkirtsType('s10')">
+                   </div>
+           
+                   <!-- Grid 2: Skirt colors -->
+                   <div class="grid-container skirts-grid-small">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b"
+                            onclick="selectSkirtsColor('b')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b1"
+                            onclick="selectSkirtsColor('b1')">
+                        <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c2.png" 
+                            alt="White" 
+                            class="grid-item-sm"
+                            data-color="w"
+                            onclick="selectSkirtsColor('w')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c2.png"    
+                            alt="White" 
+                            class="grid-item-sm"
+                            data-color="w1"
+                            onclick="selectSkirtsColor('w1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c3.png" 
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p"
+                            onclick="selectSkirtsColor('p')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c3.png"
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p1"
+                            onclick="selectSkirtsColor('p1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c4.png" 
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu"
+                            onclick="selectSkirtsColor('bu')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c4.png"
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu1"
+                            onclick="selectSkirtsColor('bu1')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c5.png" 
+                            alt="Lavander" 
+                            class="grid-item-sm"
+                            data-color="l"
+                            onclick="selectSkirtsColor('l')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Skirts/c5.png"
+                            alt="Lavander" 
+                            class="grid-item-sm"
+                            data-color="l1"
+                            onclick="selectSkirtsColor('l1')">
+                   </div>
+               </div>
+           </div>
+            
+           <div class="section dresses-section">
+               <div class="section-header">
+                    <h2 class="section-title">Dresses</h2>
+                    <button class="reset-button" onclick="resetSection('dresses')">Reset</button>
+                   </div>
+               <div class="dresses-grids-container">
+                   <!-- Grid 1: Dress types -->
+                   <div class="grid-container dresses-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/d1.png" 
+                            alt="Dress Option 1" 
+                            class="grid-item-lg"
+                            data-dresses="d1"
+                            onclick="selectDressesType('d1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/d2.png" 
+                            alt="Dress Option 2" 
+                            class="grid-item-lg"
+                            data-dresses="d2"
+                            onclick="selectDressesType('d2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/d3.png" 
+                            alt="Dress Option 3" 
+                            class="grid-item-lg"
+                            data-dresses="d3"
+                            onclick="selectDressesType('d3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/d4.png" 
+                            alt="Dress Option 4" 
+                            class="grid-item-lg"
+                            data-dresses="d4"
+                            onclick="selectDressesType('d4')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/d5.png" 
+                            alt="Dress Option 5" 
+                            class="grid-item-lg"
+                            data-dresses="d5"
+                            onclick="selectDressesType('d5')">
+                   </div>
+           
+                   <!-- Grid 2: Dress colors -->
+                   <div class="grid-container dresses-grid-small">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b"
+                            onclick="selectDressesColor('b')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b1"
+                            onclick="selectDressesColor('b1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c2.png" 
+                            alt="White" 
+                            class="grid-item-sm"
+                            data-color="w"
+                            onclick="selectDressesColor('w')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c2.png"
+                               alt="White" 
+                               class="grid-item-sm"
+                               data-color="w1"
+                               onclick="selectDressesColor('w1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c3.png" 
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p"
+                            onclick="selectDressesColor('p')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c3.png"
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p1"
+                            onclick="selectDressesColor('p1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c4.png" 
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu"
+                            onclick="selectDressesColor('bu')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c4.png"
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu1"
+                            onclick="selectDressesColor('bu1')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c5.png"
+                            alt="Lavander" 
+                            class="grid-item-sm"
+                            data-color="l"
+                            onclick="selectDressesColor('l')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Dresses/c5.png"
+                            alt="Lavander" 
+                            class="grid-item-sm"
+                            data-color="l1"
+                            onclick="selectDressesColor('l1')">
+                   </div>
+               </div>
+           </div>
+            
+           <div class="section jackets-section">
+               <div class="section-header">
+                    <h2 class="section-title">jackets</h2>
+                    <button class="reset-button" onclick="resetSection('jackets')">Reset</button>
+                   </div>
+               <div class="jackets-grids-container">
+                   <!-- Grid 1: Jacket types -->
+                   <div class="grid-container jackets-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j1.png" 
+                            alt="Jacket Option 1" 
+                            class="grid-item-lg"
+                            data-jackets="j1"
+                            onclick="selectJacketsType('j1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j2.png" 
+                            alt="Jacket Option 2" 
+                            class="grid-item-lg"
+                            data-jackets="j2"
+                            onclick="selectJacketsType('j2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j3.png" 
+                            alt="Jacket Option 3" 
+                            class="grid-item-lg"
+                            data-jackets="j3"
+                            onclick="selectJacketsType('j3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j4.png" 
+                            alt="Jacket Option 4" 
+                            class="grid-item-lg"
+                            data-jackets="j4"
+                            onclick="selectJacketsType('j4')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j5.png" 
+                            alt="Jacket Option 5" 
+                            class="grid-item-lg"
+                            data-jackets="j5"
+                            onclick="selectJacketsType('j5')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j6.png"
+                            alt="Jacket Option 6" 
+                            class="grid-item-lg"
+                            data-jackets="j6"
+                            onclick="selectJacketsType('j6')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Jackets/j7.png"
+                            alt="Jacket Option 7" 
+                            class="grid-item-lg"
+                            data-jackets="j7"
+                            onclick="selectJacketsType('j7')">
+                   </div>
+           
+                   <!-- Grid 2: Jacket colors -->
+                   <div class="grid-container jackets-grid-small">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c1.png" 
+                    alt="Black" 
+                    class="grid-item-sm"
+                    data-color="b"
+                    onclick="selectJacketsColor('b')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c1.png" 
+                    alt="Black" 
+                    class="grid-item-sm"
+                    data-color="b1"
+                    onclick="selectJacketsColor('b1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c2.png" 
+                    alt="White" 
+                    class="grid-item-sm"
+                    data-color="w"
+                    onclick="selectJacketsColor('w')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c2.png"
+                       alt="White" 
+                       class="grid-item-sm"
+                       data-color="w1"
+                       onclick="selectJacketsColor('w1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c3.png" 
+                    alt="Pink" 
+                    class="grid-item-sm"
+                    data-color="p"
+                    onclick="selectJacketsColor('p')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c3.png"
+                    alt="Pink" 
+                    class="grid-item-sm"
+                    data-color="p1"
+                    onclick="selectJacketsColor('p1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c4.png" 
+                    alt="Blue" 
+                    class="grid-item-sm"
+                    data-color="bu"
+                    onclick="selectJacketsColor('bu')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c4.png"
+                    alt="Blue" 
+                    class="grid-item-sm"
+                    data-color="bu1"
+                    onclick="selectJacketsColor('bu1')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c5.png"
+                    alt="Lavander" 
+                    class="grid-item-sm"
+                    data-color="l"
+                    onclick="selectJacketsColor('l')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c5.png"
+                    alt="Lavander" 
+                    class="grid-item-sm"
+                    data-color="l1"
+                    onclick="selectJacketsColor('l1')">
+                   </div>
+               </div>
+           </div>
+            
+           <div class="section socks-section">
+               <div class="section-header">
+                    <h2 class="section-title">Socks</h2>
+                    <button class="reset-button" onclick="resetSection('socks')">Reset</button>
+                   </div>
+               <div class="socks-grids-container">
+                   <!-- Grid 1: Socks types -->
+                   <div class="grid-container socks-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Socks/k1.png" 
+                            alt="Socks Option 1" 
+                            class="grid-item-lg"
+                            data-socks="k1"
+                            onclick="selectSocksType('k1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Socks/k2.png" 
+                            alt="Socks Option 2" 
+                            class="grid-item-lg"
+                            data-socks="k2"
+                            onclick="selectSocksType('k2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Socks/k3.png" 
+                            alt="Socks Option 3" 
+                            class="grid-item-lg"
+                            data-socks="k3"
+                            onclick="selectSocksType('k3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Socks/k4.png" 
+                            alt="Socks Option 4" 
+                            class="grid-item-lg"
+                            data-socks="k4"
+                            onclick="selectSocksType('k4')">
+                   </div>
+           
+                   <!-- Grid 2: Socks colors -->
+                   <div class="grid-container socks-grid-small">
+                    <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c1.png" 
+                    alt="Black" 
+                    class="grid-item-sm"
+                    data-color="b"
+                    onclick="selectSocksColor('b')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c1.png" 
+                    alt="Black" 
+                    class="grid-item-sm"
+                    data-color="b1"
+                    onclick="selectSocksColor('b1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c2.png" 
+                    alt="White" 
+                    class="grid-item-sm"
+                    data-color="w"
+                    onclick="selectSocksColor('w')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c2.png"
+                       alt="White" 
+                       class="grid-item-sm"
+                       data-color="w1"
+                       onclick="selectSocksColor('w1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c3.png" 
+                    alt="Pink" 
+                    class="grid-item-sm"
+                    data-color="p"
+                    onclick="selectSocksColor('p')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c3.png"
+                    alt="Pink" 
+                    class="grid-item-sm"
+                    data-color="p1"
+                    onclick="selectSocksColor('p1')">
+               <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c4.png" 
+                    alt="Blue" 
+                    class="grid-item-sm"
+                    data-color="bu"
+                    onclick="selectSocksColor('bu')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c4.png"
+                    alt="Blue" 
+                    class="grid-item-sm"
+                    data-color="bu1"
+                    onclick="selectSocksColor('bu1')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c5.png"
+                    alt="Lavander" 
+                    class="grid-item-sm"
+                    data-color="l"
+                    onclick="selectSocksColor('l')">
+                 <img src="Resources/ASSETS (ICONS ONLY)/Jackets/c5.png"
+                    alt="Lavander" 
+                    class="grid-item-sm"
+                    data-color="l1"
+                    onclick="selectSocksColor('l1')">
+                   </div>
+               </div>
+           </div>
+            
+           <div class="section shoes-section">
+               <div class="section-header">
+                    <h2 class="section-title">Shoes</h2>
+                    <button class="reset-button" onclick="resetSection('shoes')">Reset</button>
+                   </div>
+               <div class="shoes-grids-container">
+                   <!-- Grid 1: Shoes types -->
+                   <div class="grid-container shoes-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/x1.png" 
+                            alt="Shoes Option 1" 
+                            class="grid-item-lg"
+                            data-shoes="x1"
+                            onclick="selectShoesType('x1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/x2.png" 
+                            alt="Shoes Option 2" 
+                            class="grid-item-lg"
+                            data-shoes="x2"
+                            onclick="selectShoesType('x2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/x3.png" 
+                            alt="Shoes Option 3" 
+                            class="grid-item-lg"
+                            data-shoes="x3"
+                            onclick="selectShoesType('x3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/x4.png" 
+                            alt="Shoes Option 4" 
+                            class="grid-item-lg"
+                            data-shoes="x4"
+                            onclick="selectShoesType('x4')">
+                         <img src = "Resources/ASSETS (ICONS ONLY)/Shoes/x6.png" 
+                            alt = "Shoes Option 5" 
+                            class = "grid-item-lg"
+                            data-shoes = "x5"
+                            onclick = "selectShoesType('x5')"> 
+                         <img src = "Resources/ASSETS (ICONS ONLY)/Shoes/x5.png" 
+                            alt = "Shoes Option 6" 
+                            class = "grid-item-lg"
+                            data-shoes = "x6"
+                            onclick = "selectShoesType('x6')">
+                   </div>
+           
+                   <!-- Grid 2: Shoes colors -->
+                   <div class="grid-container shoes-grid-small">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b"
+                            onclick="selectShoesColor('b')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/c2.png" 
+                            alt="White" 
+                            class="grid-item-sm"
+                            data-color="w"
+                            onclick="selectShoesColor('w')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/c3.png" 
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p"
+                            onclick="selectShoesColor('p')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Shoes/c4.png" 
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu"
+                            onclick="selectShoesColor('bu')">
+                           <img src="Resources/ASSETS (ICONS ONLY)/Shoes/c5.png" 
+                            alt="Lavander" 
+                            class="grid-item-sm"
+                            data-color="l"
+                            onclick="selectShoesColor('l')">
+                   </div>
+               </div>
+           </div>
+            
+           <div class="section legwarmers-section">
+               <div class="section-header">
+                    <h2 class="section-title">Leg Warmers</h2>
+                    <button class="reset-button" onclick="resetSection('legwarmers')">Reset</button>
+                   </div>
+               <div class="legwarmers-grids-container">
+                   <!-- Grid 1: Leg Warmers types -->
+                   <div class="grid-container legwarmers-grid-large">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/l1.png" 
+                            alt="Leg Warmers Option 1" 
+                            class="grid-item-lg"
+                            data-legwarmers="l1"
+                            onclick="selectLegWarmersType('l1')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/l2.png" 
+                            alt="Leg Warmers Option 2" 
+                            class="grid-item-lg"
+                            data-legwarmers="l2"
+                            onclick="selectLegWarmersType('l2')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/l3.png" 
+                            alt="Leg Warmers Option 3" 
+                            class="grid-item-lg"
+                            data-legwarmers="l3"
+                            onclick="selectLegWarmersType('l3')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/l4.png" 
+                            alt="Leg Warmers Option 4" 
+                            class="grid-item-lg"
+                            data-legwarmers="l4"
+                            onclick="selectLegWarmersType('l4')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/l5.png" 
+                            alt="Leg Warmers Option 5" 
+                            class="grid-item-lg"
+                            data-legwarmers="l5"
+                            onclick="selectLegWarmersType('l5')">
+                   </div>
+           
+                   <!-- Grid 2: Leg Warmers colors -->
+                   <div class="grid-container legwarmers-grid-small">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/c1.png" 
+                            alt="Black" 
+                            class="grid-item-sm"
+                            data-color="b"
+                            onclick="selectLegWarmersColor('b')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/c2.png" 
+                            alt="White" 
+                            class="grid-item-sm"
+                            data-color="w"
+                            onclick="selectLegWarmersColor('w')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/c3.png" 
+                            alt="Pink" 
+                            class="grid-item-sm"
+                            data-color="p"
+                            onclick="selectLegWarmersColor('p')">
+                       <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/c4.png" 
+                            alt="Blue" 
+                            class="grid-item-sm"
+                            data-color="bu"
+                            onclick="selectLegWarmersColor('bu')">
+                         <img src="Resources/ASSETS (ICONS ONLY)/Legwarmers/c5.png"
+                              alt="Lavander" 
+                              class="grid-item-sm"
+                              data-color="l"
+                              onclick="selectLegWarmersColor('l')">
+                   </div>
+               </div>
+           </div>
+            
+            <div class="section accessories1-section">
+               <div class="section-header">
+                    <h2 class="section-title">accessories</h2>
+                    <button class="reset-button" onclick="resetSection('acc1')">Reset</button>
+                   </div>
+            
+                <div class="accessories1-grids-wrapper">
+                    <div class="accessories1-grids-container">
+                        <!-- Grid 1: 11x2 layout (50x50px) -->
+                        <!-- Grid 1: 11x2 layout (50x50px) -->
+<div class="grid-container accessories1-grid-large">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a1.png" 
+          alt="Accessory Option 1" 
+          class="grid-item-lg"
+          data-acc1="a1"
+          onclick="selectAcc1Type('a1')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a2.png" 
+          alt="Accessory Option 2" 
+          class="grid-item-lg"
+          data-acc1="a2"
+          onclick="selectAcc1Type('a2')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a3.png" 
+          alt="Accessory Option 3" 
+          class="grid-item-lg"
+          data-acc1="a3"
+          onclick="selectAcc1Type('a3')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a5.png" 
+          alt="Accessory Option 5" 
+          class="grid-item-lg"
+          data-acc1="a5"
+          onclick="selectAcc1Type('a5')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a6.png" 
+          alt="Accessory Option 6" 
+          class="grid-item-lg"
+          data-acc1="a6"
+          onclick="selectAcc1Type('a6')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a7.png" 
+          alt="Accessory Option 7" 
+          class="grid-item-lg"
+          data-acc1="a7"
+          onclick="selectAcc1Type('a7')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a8.png" 
+          alt="Accessory Option 8" 
+          class="grid-item-lg"
+          data-acc1="a8"
+          onclick="selectAcc1Type('a8')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a9.png" 
+          alt="Accessory Option 9" 
+          class="grid-item-lg"
+          data-acc1="a9"
+          onclick="selectAcc1Type('a9')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a10.png" 
+          alt="Accessory Option 10" 
+          class="grid-item-lg"
+          data-acc1="a10"
+          onclick="selectAcc1Type('a10')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a11.png" 
+          alt="Accessory Option 11" 
+          class="grid-item-lg"
+          data-acc1="a11"lg
+          onclick="selectAcc1Type('a11')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a12.png" 
+          alt="Accessory Option 12" 
+          class="grid-item-lg"
+          data-acc1="a12"
+          onclick="selectAcc1Type('a12')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a13.png" 
+          alt="Accessory Option 13" 
+          class="grid-item-lg"
+          data-acc1="a13"
+          onclick="selectAcc1Type('a13')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a14.png" 
+          alt="Accessory Option 14" 
+          class="grid-item-lg"
+          data-acc1="a14"
+          onclick="selectAcc1Type('a14')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a15.png" 
+          alt="Accessory Option 15" 
+          class="grid-item-lg"
+          data-acc1="a15"
+          onclick="selectAcc1Type('a15')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a16.png" 
+          alt="Accessory Option 16" 
+          class="grid-item-lg"
+          data-acc1="a16"
+          onclick="selectAcc1Type('a16')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a17.png" 
+          alt="Accessory Option 17" 
+          class="grid-item-lg"
+          data-acc1="a17"
+          onclick="selectAcc1Type('a17')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a18.png" 
+          alt="Accessory Option 18" 
+          class="grid-item-lg"
+          data-acc1="a18"
+          onclick="selectAcc1Type('a18')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a19.png" 
+          alt="Accessory Option 19" 
+          class="grid-item-lg"
+          data-acc1="a19"
+          onclick="selectAcc1Type('a19')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a20.png" 
+          alt="Accessory Option 20" 
+          class="grid-item-lg"
+          data-acc1="a20"
+          onclick="selectAcc1Type('a20')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a21.png" 
+          alt="Accessory Option 21" 
+          class="grid-item-lg"
+          data-acc1="a21"
+          onclick="selectAcc1Type('a21')">
+     <img src="Resources/ASSETS (ICONS ONLY)/acc/a22.png" 
+          alt="Accessory Option 22" 
+          class="grid-item-lg"
+          data-acc1="a22"
+          onclick="selectAcc1Type('a22')">
+ </div>
+            
+ <div class="grid-container accessories1-grid-small">
+     <img src="Resources/colors/white.png" 
+          alt="White" 
+          class="grid-item-sm"
+          data-color="w"
+          onclick="selectAcc1Color('w')">
+     <img src="Resources/colors/black.png" 
+          alt="Black" 
+          class="grid-item-sm"
+          data-color="b"
+          onclick="selectAcc1Color('b')">
+     <img src="Resources/colors/blue.png" 
+          alt="Blue" 
+          class="grid-item-sm"
+          data-color="bu"
+          onclick="selectAcc1Color('bu')">
+     <img src="Resources/colors/lavander.png" 
+          alt="Lavander" 
+          class="grid-item-sm"
+          data-color="l"
+          onclick="selectAcc1Color('l')">
+     <img src="Resources/colors/pink.png" 
+          alt="Pink" 
+          class="grid-item-sm"
+          data-color="p"
+          onclick="selectAcc1Color('p')">
+ </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="section accessories2-section">
+                         <div class="section-header">
+                             <h2 class="section-title">Accessories 2</h2>
+                             <button class="reset-button" onclick="resetSection('acc2')">Reset</button>
+                         </div>
+                         <div class="accessories2-grids-container">
+                             <!-- Grid 1: Accessories2 types -->
+                             <div class="grid-container accessories2-grid-large">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a1.png" 
+                                     alt="Accessory2 Option 1" 
+                                     class="grid-item-lg"
+                                     data-acc2="a1"
+                                     onclick="toggleAcc2('a1')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a2.png" 
+                                     alt="Accessory2 Option 2" 
+                                     class="grid-item-lg"
+                                     data-acc2="a2"
+                                     onclick="toggleAcc2('a2')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a3.png" 
+                                     alt="Accessory2 Option 3" 
+                                     class="grid-item-lg"
+                                     data-acc2="a3"
+                                     onclick="toggleAcc2('a3')">
+                         
+                                   <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a6.png" 
+                                     alt="Accessory2 Option 6" 
+                                     class="grid-item-lg"
+                                     data-acc2="a6"
+                                     onclick="toggleAcc2('a6')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a7.png" 
+                                     alt="Accessory2 Option 7" 
+                                     class="grid-item-lg"
+                                     data-acc2="a7"
+                                     onclick="toggleAcc2('a7')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a8.png" 
+                                     alt="Accessory2 Option 8" 
+                                     class="grid-item-lg"
+                                     data-acc2="a8"
+                                     onclick="toggleAcc2('a8')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a9.png" 
+                                     alt="Accessory2 Option 9" 
+                                     class="grid-item-lg"
+                                     data-acc2="a9"
+                                     onclick="toggleAcc2('a9')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a10.png" 
+                                     alt="Accessory2 Option 10" 
+                                     class="grid-item-lg"
+                                     data-acc2="a10"
+                                     onclick="toggleAcc2('a10')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a11.png" 
+                                     alt="Accessory2 Option 11" 
+                                     class="grid-item-lg"
+                                     data-acc2="a11"
+                                     onclick="toggleAcc2('a11')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a12.png" 
+                                     alt="Accessory2 Option 12" 
+                                     class="grid-item-lg"
+                                     data-acc2="a12"
+                                     onclick="toggleAcc2('a12')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a13.png" 
+                                     alt="Accessory2 Option 13" 
+                                     class="grid-item-lg"
+                                     data-acc2="a13"
+                                     onclick="toggleAcc2('a13')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a14.png" 
+                                     alt="Accessory2 Option 14" 
+                                     class="grid-item-lg"
+                                     data-acc2="a14"
+                                     onclick="toggleAcc2('a14')">
+                                     <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a15.png" 
+                                     alt="Accessory2 Option 15" 
+                                     class="grid-item-lg"
+                                     data-acc2="a15"
+                                     onclick="toggleAcc2('a15')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a16.png" 
+                                     alt="Accessory2 Option 16" 
+                                     class="grid-item-lg"
+                                     data-acc2="a16"
+                                     onclick="toggleAcc2('a16')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a17.png" 
+                                     alt="Accessory2 Option 17" 
+                                     class="grid-item-lg"
+                                     data-acc2="a17"
+                                     onclick="toggleAcc2('a17')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a18.png" 
+                                     alt="Accessory2 Option 18" 
+                                     class="grid-item-lg"
+                                     data-acc2="a18"
+                                     onclick="toggleAcc2('a18')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a19.png" 
+                                     alt="Accessory2 Option 19" 
+                                     class="grid-item-lg"
+                                     data-acc2="a19"
+                                     onclick="toggleAcc2('a19')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a20.png" 
+                                     alt="Accessory2 Option 20" 
+                                     class="grid-item-lg"
+                                     data-acc2="a20"
+                                     onclick="toggleAcc2('a20')">
+                                <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/a21.png" 
+                                     alt="Accessory2 Option 21" 
+                                     class="grid-item-lg"
+                                     data-acc2="a21"
+                                     onclick="toggleAcc2('a21')">
+                             </div>
+                     
+                             <!-- Grid 2: Accessories2 colors -->
+                             <div class="grid-container accessories2-grid-small">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/c1.png" 
+                                     alt="Black" 
+                                     class="grid-item-sm"
+                                     data-color="b"
+                                     onclick="selectAcc2Color('b')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/c2.png" 
+                                     alt="White" 
+                                     class="grid-item-sm"
+                                     data-color="w"
+                                     onclick="selectAcc2Color('w')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/c3.png" 
+                                     alt="Pink" 
+                                     class="grid-item-sm"
+                                     data-color="p"
+                                     onclick="selectAcc2Color('p')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/c4.png" 
+                                     alt="Blue" 
+                                     class="grid-item-sm"
+                                     data-color="bu"
+                                     onclick="selectAcc2Color('bu')">
+                                 <img src="Resources/ASSETS (ICONS ONLY)/Accessories2/c5.png" 
+                                     alt="Purple" 
+                                     class="grid-item-sm"
+                                     data-color="l"
+                                     onclick="selectAcc2Color('l')">
+                             </div>
+                         </div>
+                     </div>
+        </div>
+    </div>
+
+    <div id="download-modal" class="modal">
+     <div class="modal-content">
+         <h2>✨ Great Job! ✨</h2>
+         <p>Here's your amazing creation!</p>
+         <div class="preview-container"></div>
+         <button id="download-creation" class="download-creation-btn">Download</button>
+         <button id="close-modal" class="close-modal-btn">Close</button>
+     </div>
+ </div>
+</body>
+</html>
